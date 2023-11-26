@@ -16,7 +16,7 @@ export default defineNuxtConfig({
   $production: {
     routeRules: {
       "/**": {
-        ssr: true,
+        static: true,
       },
     },
   },
@@ -28,7 +28,7 @@ export default defineNuxtConfig({
     display: "swap",
     preconnect: true,
     families: {
-      Jost: [300, 400, 500, 600, 700],
+      Lato: [300, 400, 500, 600, 700],
     },
   },
   vite: {
