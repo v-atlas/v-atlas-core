@@ -25,3 +25,12 @@ jobs:
 
           docker compose build
           docker compose push
+
+      - name: Repository Dispatch
+        uses: peter-evans/repository-dispatch@v2
+        with:
+            token: ${{ secrets.REGISTRY_PASS }}
+            repository: v-atlas/base-ci
+            event-type: rebuild-instance
+            client-payload: '{"ref": "${{ github.ref }}", "sha": "${{ github.sha }}"}'
+
