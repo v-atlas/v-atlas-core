@@ -2,12 +2,10 @@ version: "3.8"
 
 services:
     v-atlas-client:
+        image: ghcr.io/v-atlas/v-atlas-poc/v-atlas-identity-client:latest
         build:
             context: .
             dockerfile: Dockerfile
-
-        ports:
-            - "3000:3000"
 
         logging:
             driver: "json-file"
