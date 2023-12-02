@@ -13,6 +13,7 @@ export default defineNuxtConfig({
   pinia: {
     storesDirs: ["stores"],
   },
+  css: ["@fortawesome/fontawesome-svg-core/styles.css"],
   $production: {
     routeRules: {
       "/**": {
@@ -47,5 +48,8 @@ export default defineNuxtConfig({
         },
       },
     },
+  },
+  build: {
+    transpile: ["@fortawesome/vue-fontawesome"],
   },
 });

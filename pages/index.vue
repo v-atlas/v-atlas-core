@@ -1,5 +1,7 @@
 <template>
-  <div></div>
+  <div class="landing">
+    <Qrid :did="myDid" />
+  </div>
 </template>
 
 <script lang="ts" setup>
@@ -19,6 +21,8 @@ useSeoMeta({
   description:
     "Discover V-Atlas, a visionary platform using Web5 technology to empower users with secure, flexible virtual storage and identity management. Control your digital presence like never before.",
 });
+
+const { $myDID: myDid } = useNuxtApp();
 </script>
 
 <style lang="scss" scoped></style>
