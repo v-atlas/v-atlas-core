@@ -1,0 +1,44 @@
+$min-button-height: 30px;
+$min-button-width: 30px;
+$button-border-radius: 2px;
+
+button.action {
+  all: unset;
+
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+  min-height: $min-button-height;
+  min-width: $min-button-width;
+  border-radius: $button-border-radius;
+
+  background-color: none;
+
+  font-size: 0.9rem;
+
+  cursor: pointer;
+
+  transition: background-color 200ms ease-out, color 200ms ease-out;
+
+  &.primary {
+    background-color: $primary-blue;
+    color: $primary-light;
+
+    &:hover {
+      background-color: $primary-dark;
+    }
+  }
+
+  &.secondary {
+    background-color: $primary-light;
+    color: $primary-dark;
+
+    &:hover {
+      background-color: $primary-dark;
+      color: $primary-light;
+    }
+  }
+}

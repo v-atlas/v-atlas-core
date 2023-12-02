@@ -14,7 +14,6 @@
         <button @click="clearPageError" class="action">Home</button>
       </div>
     </div>
-    <CookieBanner />
   </NuxtLayout>
 </template>
 
