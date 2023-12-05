@@ -21,7 +21,7 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: $primary-yellow;
+  background-color: $primary-blue;
   transition: background-color 200ms ease-out;
 
   border-radius: 5px;
@@ -29,10 +29,10 @@ body {
 }
 
 ::-webkit-scrollbar-corner {
-  background-color: $primary-yellow;
+  background-color: $primary-blue;
 }
 
 ::-webkit-scrollbar-thumb:hover {
   transition: background-color 200ms ease-in;
-  background-color: $primary-yellow;
+  background-color: $primary-blue;
 }

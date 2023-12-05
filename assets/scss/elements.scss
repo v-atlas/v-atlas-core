@@ -9,6 +9,19 @@ button.action {
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  gap: 10px;
+
+  background-image: linear-gradient(
+    to bottom right,
+    rgba($color: $primary-dark, $alpha: 0.2),
+    rgba($color: $primary-dark, $alpha: 0.5)
+  );
+
+  padding: 5px 10px;
+
+  &.icon {
+    padding: 5px;
+  }
 
   border: none;
   min-height: $min-button-height;
@@ -39,6 +52,35 @@ button.action {
     &:hover {
       background-color: $primary-dark;
       color: $primary-light;
+    }
+  }
+
+  &.success {
+    background-color: $primary-green;
+    color: $primary-light;
+
+    &:hover {
+      background-color: $primary-dark;
+    }
+  }
+
+  &.danger {
+    background-color: $primary-red;
+    color: $primary-light;
+
+    &:hover {
+      background-color: $primary-dark;
+    }
+  }
+
+  &:disabled {
+    background-color: rgba($color: $primary-dark, $alpha: 0.4);
+    color: $primary-light;
+    background-image: none;
+    cursor: not-allowed;
+
+    &:hover {
+      background-color: rgba($color: $primary-dark, $alpha: 0.2);
     }
   }
 }

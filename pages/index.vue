@@ -1,6 +1,6 @@
 <template>
   <div class="landing">
-    <Qrid :did="myDid" />
+    <link-spotify></link-spotify>
   </div>
 </template>
 
@@ -21,8 +21,10 @@ useSeoMeta({
   description:
     "Discover V-Atlas, a visionary platform using Web5 technology to empower users with secure, flexible virtual storage and identity management. Control your digital presence like never before.",
 });
-
-const { $myDID: myDid } = useNuxtApp();
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+div.landing {
+  padding: 50px 0;
+}
+</style>
