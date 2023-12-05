@@ -54,9 +54,9 @@ export default defineNuxtConfig({
     transpile: ["@fortawesome/vue-fontawesome"],
   },
   runtimeConfig: {
-    spotifyClientId: process.env.SPOTIFY_CLIENT_ID,
-    spotifyClientSecret: process.env.SPOTIFY_CLIENT_SECRET,
-    spotifyRedirectUrl: process.env.SPOTIFY_REDIRECT_URL,
+    spotifyClientId: "",
+    spotifyClientSecret: "",
+    spotifyRedirectUrl: "",
     spotifyApiUrl: "https://accounts.spotify.com",
   },
 });
