@@ -9,6 +9,7 @@ export default defineNuxtConfig({
         autoImports: ["acceptHMRUpdate"],
       },
     ],
+    "@pinia-plugin-persistedstate/nuxt",
   ],
   pinia: {
     storesDirs: ["stores"],
