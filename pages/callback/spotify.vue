@@ -2,15 +2,15 @@
   <div class="spotify-callback">
     <div class="content">
       <div class="feedback">
-        <div class="actions" v-if="!data?.success">
-          <nuxt-link to="/">Go Home</nuxt-link>
-        </div>
-
         <template v-if="pending">
           <font-awesome-icon icon="fa-solid fa-circle-notch" spin />
         </template>
 
         <template v-else>
+          <div class="actions" v-if="!data?.success">
+            <nuxt-link to="/">Go Home</nuxt-link>
+          </div>
+
           <p class="message">
             {{ data?.message }}
           </p>
@@ -29,12 +29,14 @@
 
 <script lang="ts" setup>
 import { z } from "zod";
+import { useAuthStore } from "~/stores/auth";
 
 definePageMeta({
   middleware: "spotify-connect",
 });
 
 const route = useRoute();
+const authStore = useAuthStore();
 
 const callbackSchema = z.object({
   code: z.string(),
@@ -43,11 +45,24 @@ const callbackSchema = z.object({
 
 const { code, state } = callbackSchema.parse(route.query);
 
-const { pending, data } = useFetch(
+const { pending, data } = await useLazyFetch(
   "/api/validate-spotify-authorization-request",
   {
+    server: false,
     method: "POST",
     body: JSON.stringify({ code, state }),
+  }
+);
+
+watch(
+  () => pending.value,
+  () => {
+    console.log(data?.value?.success);
+    if (data?.value?.success) {
+      authStore.setSpotifyAccessToken(data.value.token);
+
+      navigateTo("/");
+    }
   }
 );
 </script>
