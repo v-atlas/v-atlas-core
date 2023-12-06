@@ -9,6 +9,8 @@ import {
   faQrcode,
   faTimesCircle,
   faCheckCircle,
+  faDownload,
+  faPlus,
 } from "@fortawesome/free-solid-svg-icons";
 
 import {
@@ -20,6 +22,7 @@ import {
 
 library.add(
   ...[
+    faPlus,
     faArrowRight,
     faCircleNotch,
     faTimes,
@@ -32,6 +35,7 @@ library.add(
     faXTwitter,
     faInstagram,
     faLinkedin,
+    faDownload,
   ]
 );
 
