@@ -48,6 +48,7 @@ button.action {
     &:hover {
       background-color: $primary-dark;
       color: $primary-light;
+      border: 1px solid $primary-light;
     }
   }
 
@@ -76,6 +77,7 @@ button.action {
     &:hover {
       background-color: $primary-dark;
       color: $primary-light;
+      border: 1px solid $primary-yellow;
     }
   }
 

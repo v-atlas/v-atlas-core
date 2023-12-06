@@ -1,6 +1,13 @@
 <template>
   <div class="spotify-playlist-item">
     <div class="top">
+      <div class="image">
+        <img
+          v-if="playlist.images.length > 0"
+          :src="playlist.images[0].url"
+          alt="Playlist Cover" />
+        <img v-else src="~/assets/images/spotify.png" alt="Fallback Image" />
+      </div>
       <div class="left">
         <span class="name">{{ playlist.name }}</span>
         <p class="description">
@@ -9,6 +16,7 @@
       </div>
 
       <div class="right">
+        <p>{{ playlist.tracks.total }} Tracks</p>
         <a :href="playlist.external_urls.spotify" target="blank">
           View on Spotify
           <font-awesome-icon icon="fa-brands fa-spotify" />
@@ -31,7 +39,7 @@
 </template>
 
 <script lang="ts" setup>
-import { type SpotifyPlaylistItem } from "~/types";
+import { type SpotifyPlaylistItem } from '~/types';
 
 defineProps<{
   playlist: SpotifyPlaylistItem;
@@ -41,12 +49,11 @@ defineProps<{
 <style lang="scss" scoped>
 div.spotify-playlist-item {
   display: flex;
-  flex-direction: column;
   gap: 10px;
-
-  max-width: 800px;
+  flex-direction: column;
 
   div.top {
+    position: relative;
     padding: 10px;
     border-radius: 5px;
 
@@ -59,13 +66,17 @@ div.spotify-playlist-item {
 
     display: flex;
     flex-direction: column;
+    min-height: 280px;
 
-    @media screen and (min-width: 768px) {
+    @media screen and (min-width: 1051px) {
       flex-direction: row;
+      align-items: center;
+      min-height: fit-content;
     }
 
     gap: 20px;
     div.left {
+      width: 220px;
       span.name {
         font-size: 1.2rem;
         font-weight: bold;
@@ -74,42 +85,56 @@ div.spotify-playlist-item {
       p.description {
         font-size: 0.9rem;
         font-weight: normal;
-
         line-height: 1.5;
-        text-overflow: ellipsis;
         overflow: hidden;
-        white-space: nowrap;
-
+        display: -webkit-box;
+        -webkit-line-clamp: 2; /* Number of lines to show */
+        -webkit-box-orient: vertical;
+        max-width: 250px;
         margin: 0;
         padding: 0;
 
-        max-width: calc(100vw - 100px);
-
-        @media screen and (min-width: 768px) {
-          max-width: 500px;
+        @media screen and (min-width: 1051px) {
+          max-width: 150px;
         }
       }
     }
 
-    div.right {
-      margin-left: auto;
-      display: flex;
-      flex-direction: column;
+    div.image {
+      max-width: 25%;
 
-      @media screen and (min-width: 768px) {
-        flex-direction: row;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border: 2px solid $primary-light;
+        border-radius: 5px;
       }
+    }
+
+    div.right {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      text-align: end;
+
       a {
+        flex-direction: row;
         display: flex;
-        align-items: center;
+        justify-content: flex-end;
         gap: 10px;
         font-size: 0.9rem;
         font-weight: normal;
         text-decoration: none;
         color: var(--color-primary);
+        background-color: $primary-green;
+        padding: 15px 10px;
+        border-radius: 10px;
+        transition: all 0.3s ease-in-out;
 
         &:hover {
           text-decoration: underline;
+          transform: scale(1.1);
         }
       }
     }
