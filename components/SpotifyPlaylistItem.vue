@@ -117,7 +117,7 @@ div.spotify-playlist-item {
       a {
         flex-direction: row;
         display: flex;
-        justify-content: end;
+        justify-content: flex-end;
         gap: 10px;
         font-size: 0.9rem;
         font-weight: normal;
