@@ -11,12 +11,6 @@ button.action {
   justify-content: center;
   gap: 10px;
 
-  background-image: linear-gradient(
-    to bottom right,
-    rgba($color: $primary-dark, $alpha: 0.2),
-    rgba($color: $primary-dark, $alpha: 0.5)
-  );
-
   padding: 5px 10px;
 
   &.icon {
@@ -26,6 +20,8 @@ button.action {
   border: none;
   min-height: $min-button-height;
   min-width: $min-button-width;
+  width: max-content;
+
   border-radius: $button-border-radius;
 
   background-color: none;
@@ -56,7 +52,7 @@ button.action {
   }
 
   &.success {
-    background-color: $primary-green;
+    background-color: rgba($color: $primary-green, $alpha: 0.8);
     color: $primary-light;
 
     &:hover {
@@ -70,6 +66,16 @@ button.action {
 
     &:hover {
       background-color: $primary-dark;
+    }
+  }
+
+  &.warning {
+    background-color: rgba($color: $primary-yellow, $alpha: 0.8);
+    color: $primary-dark;
+
+    &:hover {
+      background-color: $primary-dark;
+      color: $primary-light;
     }
   }
 
