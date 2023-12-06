@@ -20,14 +20,14 @@ export default defineEventHandler(async (event) => {
     const {
       spotifyClientId,
       spotifyClientSecret,
-      spotifyApiUrl,
+      spotifyAccountUrl,
       spotifyRedirectUrl,
     } = useRuntimeConfig();
 
     const rawBody = await readBody<CallbackSchema>(event);
     const body = callbackSchema.parse(rawBody);
 
-    const url = `${spotifyApiUrl}/api/token`;
+    const url = `${spotifyAccountUrl}/api/token`;
 
     const basicAuthorization = Buffer.from(
       `${spotifyClientId}:${spotifyClientSecret}`
