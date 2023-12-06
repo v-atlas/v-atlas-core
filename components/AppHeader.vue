@@ -19,7 +19,8 @@
 
 <style lang="scss" scoped>
 nav {
-  background-color: $primary-blue;
+  background-color: $primary-dark;
+  border-bottom: 2px solid $primary-yellow;
   padding: 20px 20px;
 
   @media screen and (min-width: 768px) {

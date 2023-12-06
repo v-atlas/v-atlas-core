@@ -23,12 +23,6 @@ div.v-atlas-app {
   div.page {
     height: 100%;
     min-height: calc(100vh - 100px);
-
-    padding: 0 20px;
-
-    @media screen and (min-width: 768px) {
-      padding: 0 50px;
-    }
   }
 }
 </style>

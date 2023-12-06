@@ -51,6 +51,7 @@
 <style lang="scss" scoped>
 footer {
   background-color: $primary-dark;
+  border-top: 2px solid $primary-light;
 
   padding: 20px 20px;
 

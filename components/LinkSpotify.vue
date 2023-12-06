@@ -55,6 +55,9 @@ function handleDisconnectFromSpotify() {
 
 <style lang="scss" scoped>
 div.link-spotify-widget {
+  border: 2px solid $primary-green;
+  padding: 5px;
+  border-radius: 5px;
   span.placeholder {
     font-size: 0.9rem;
     background-color: $primary-dark;

@@ -57,6 +57,7 @@ export default defineNuxtConfig({
     spotifyClientId: "",
     spotifyClientSecret: "",
     spotifyRedirectUrl: "",
-    spotifyApiUrl: "https://accounts.spotify.com",
+    spotifyApiUrl: "https://api.spotify.com",
+    spotifyAccountUrl: "https://accounts.spotify.com",
   },
 });
