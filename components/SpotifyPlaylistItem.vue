@@ -68,6 +68,7 @@ div.spotify-playlist-item {
     display: flex;
     flex-direction: column;
     min-height: 290px;
+    gap: 20px;
 
     @media screen and (min-width: 1051px) {
       flex-direction: row;
@@ -75,8 +76,6 @@ div.spotify-playlist-item {
       min-height: fit-content;
       min-height: 150px;
     }
-
-    gap: 20px;
     div.left {
       width: 220px;
       span.name {
