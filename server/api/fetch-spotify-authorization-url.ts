@@ -18,7 +18,7 @@ type OAuthParams = z.infer<typeof oauthSchema>;
 
 export default defineEventHandler(async (_event) => {
   try {
-    const { spotifyClientId, spotifyApiUrl, spotifyRedirectUrl } =
+    const { spotifyClientId, spotifyAccountUrl, spotifyRedirectUrl } =
       useRuntimeConfig();
 
     const params: OAuthParams = {
@@ -32,7 +32,7 @@ export default defineEventHandler(async (_event) => {
     const oauthParams = oauthSchema.parse(params);
     const stringifiedParams = queryString.stringify(oauthParams);
 
-    const url = `${spotifyApiUrl}/authorize?${stringifiedParams}`;
+    const url = `${spotifyAccountUrl}/authorize?${stringifiedParams}`;
 
     return {
       success: true,
