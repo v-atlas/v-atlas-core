@@ -77,7 +77,7 @@ div.spotify-playlist-manager {
   div.playlists {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 10px;
+    gap: 20px;
 
     @media (min-width: 600px) {
       grid-template-columns: 1fr 1fr;
