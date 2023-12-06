@@ -90,9 +90,13 @@ div.spotify-playlist-item {
         display: -webkit-box;
         -webkit-line-clamp: 2; /* Number of lines to show */
         -webkit-box-orient: vertical;
-        max-width: 150px;
+        max-width: 250px;
         margin: 0;
         padding: 0;
+
+        @media screen and (min-width: 1051px) {
+          max-width: 150px;
+        }
       }
     }
 
