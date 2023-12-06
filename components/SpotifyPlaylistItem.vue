@@ -16,23 +16,22 @@
       </div>
 
       <div class="right">
-        <p>{{ playlist.tracks.total }} Tracks</p>
-        <a :href="playlist.external_urls.spotify" target="blank">
-          View on Spotify
-          <font-awesome-icon icon="fa-brands fa-spotify" />
-        </a>
+        <button class="action warning">
+          Add to My Atlas
+          <font-awesome-icon icon="fa-plus" />
+        </button>
+        <div>
+          <p>{{ playlist.tracks.total }} Tracks</p>
+          <a :href="playlist.external_urls.spotify" target="blank">
+            View on Spotify
+            <font-awesome-icon icon="fa-brands fa-spotify" />
+          </a>
+        </div>
       </div>
     </div>
     <div class="bottom">
       <div class="tracks">
         <spotify-tracks-item :tracks="playlist.tracks" />
-      </div>
-
-      <div class="actions">
-        <button class="action warning">
-          Add to My Atlas
-          <font-awesome-icon icon="fa-plus" />
-        </button>
       </div>
     </div>
   </div>
@@ -72,6 +71,7 @@ div.spotify-playlist-item {
       flex-direction: row;
       align-items: center;
       min-height: fit-content;
+      min-height: 150px;
     }
 
     gap: 20px;
@@ -80,6 +80,14 @@ div.spotify-playlist-item {
       span.name {
         font-size: 1.2rem;
         font-weight: bold;
+        line-height: 1.5;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 2; /* Number of lines to show */
+        -webkit-box-orient: vertical;
+        max-width: 250px;
+        margin: 0;
+        padding: 0;
       }
 
       p.description {
@@ -98,6 +106,10 @@ div.spotify-playlist-item {
           max-width: 150px;
         }
       }
+
+      @media (min-width: 1051px) and (max-width: 1199px) {
+        width: 160px;
+      }
     }
 
     div.image {
@@ -114,9 +126,14 @@ div.spotify-playlist-item {
 
     div.right {
       position: absolute;
-      bottom: 10px;
+      bottom: 0px;
       right: 10px;
       text-align: end;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      justify-content: space-between;
+      align-items: stretch;
 
       a {
         flex-direction: row;
@@ -131,9 +148,22 @@ div.spotify-playlist-item {
         padding: 15px 10px;
         border-radius: 10px;
         transition: all 0.3s ease-in-out;
+        margin-bottom: 10px;
 
         &:hover {
           text-decoration: underline;
+          transform: scale(1.1);
+        }
+      }
+
+      button {
+        border-radius: 10px;
+        font-size: 0.9rem;
+        padding: 10px;
+        transition: all 0.3s ease-in-out;
+        margin-top: 10px;
+
+        &:hover {
           transform: scale(1.1);
         }
       }

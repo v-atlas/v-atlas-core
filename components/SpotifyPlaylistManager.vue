@@ -17,7 +17,7 @@
       </button>
 
       <button class="action warning" v-if="playlistAvailable">
-        Copy to My Atlas
+        Copy All to My Atlas
         <font-awesome-icon icon="fa-solid fa-arrow-right" />
       </button>
     </div>
