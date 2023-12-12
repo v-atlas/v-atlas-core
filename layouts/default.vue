@@ -8,8 +8,4 @@
 
 <script setup></script>
 
-<style lang="css">
-@import "~/assets/css/main.css";
-</style>
-
-<style lang="scss" scoped></style>
+<style scoped></style>
