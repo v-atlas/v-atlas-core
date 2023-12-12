@@ -1,6 +1,13 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: [],
+  content: [
+    "./components/**/*.{js,vue,ts}",
+    "./layouts/**/*.vue",
+    "./pages/**/*.vue",
+    "./plugins/**/*.{js,ts}",
+    "./nuxt.config.{js,ts}",
+    "./node_modules/flowbite/**/*.js"
+  ],
   theme: {
     extend: {
       colors: {
@@ -69,8 +76,16 @@ export default {
           900: "#7c1f3c",
           950: "#4b0c20",
         },
+        primary: '#23283B',
+        secondary: '#141725',
+        "dark": '#444a5e'
+      },
+      backgroundImage: {
+        'sidenav-gradient': 'linear-gradient(180deg, rgba(251, 54, 103, 0.14) 0%, rgba(251, 54, 103, 0.04) 65.29%)',
       },
     },
   },
-  plugins: [],
+  plugins: [
+    require('flowbite/plugin')
+],
 };
