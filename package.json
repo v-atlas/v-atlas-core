@@ -7,15 +7,19 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "init:tailwind": "pnpx tailwindcss init -p"
   },
   "devDependencies": {
     "@nuxt/devtools": "latest",
     "@nuxtjs/google-fonts": "^3.1.0",
+    "@nuxtjs/tailwindcss": "^6.10.1",
     "@pinia-plugin-persistedstate/nuxt": "^1.2.0",
     "@pinia/nuxt": "^0.5.1",
     "@types/qrcode": "^1.5.5",
     "nuxt": "^3.8.2",
+    "prettier": "^3.1.1",
+    "prettier-plugin-tailwindcss": "^0.5.9",
     "sass": "^1.69.5",
     "vue": "^3.3.8",
     "vue-router": "^4.2.5"
