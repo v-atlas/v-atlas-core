@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+  font-family: "Lato", sans-serif;
+  background-color: theme(colors.athens-gray.950);
+  background-image: url("~/assets/images/denim.webp");
+  background-repeat: repeat;
+  color: theme(colors.white);
+  height: 100%;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+  height: 3px;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: theme(colors.athens-gray.950);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: theme(colors.broom.500 / 50%);
+  transition: background-color 200ms ease-out;
+
+  border-radius: 5px;
+  -webkit-app-region: no-drag;
+}
+
+::-webkit-scrollbar-corner {
+  background-color: theme(colors.broom.500 / 50%);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  transition: background-color 200ms ease-in;
+  background-color: theme(colors.broom.500 / 50%);
+}
