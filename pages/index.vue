@@ -1,26 +1,14 @@
 <template>
-  <div class="landing">
-    <div class="content">
-      <div class="actions">
-        <link-spotify />
-      </div>
-
-      <div class="action-content">
-        <div class="spotify-actions" v-if="isSpotifyConnected">
-          <spotify-playlist-manager />
-        </div>
-      </div>
-    </div>
+  <div class="px-10 py-20 md:px-20">
+    <nuxt-link
+      to="/apps/spotify/manage"
+      class="rounded-md bg-emerald-800 p-5 font-bold no-underline transition-colors duration-200 hover:bg-emerald-600"
+      >Manage Spotify Data</nuxt-link
+    >
   </div>
 </template>
 
 <script lang="ts" setup>
-import { storeToRefs } from "pinia";
-import { useAuthStore } from "~/stores/auth";
-
-const authStore = useAuthStore();
-const { isSpotifyConnected } = storeToRefs(authStore);
-
 useHead({
   title: "V-Atlas",
   meta: [
@@ -39,38 +27,4 @@ useSeoMeta({
 });
 </script>
 
-<style lang="scss" scoped>
-div.landing {
-  padding: 20px 20px;
-
-  @media screen and (min-width: 768px) {
-    padding: 20px 50px;
-  }
-
-  div.content {
-    display: flex;
-    flex-direction: column;
-    gap: 50px;
-    div.actions {
-      display: flex;
-      flex-direction: row;
-      gap: 20px;
-
-      // background-color: rgba($color: $primary-dark, $alpha: 0.2);
-      padding: 10px 5px;
-
-      width: max-content;
-    }
-
-    div.action-content {
-      padding: 10px;
-
-      // background-color: rgba($color: $primary-dark, $alpha: 0.2);
-
-      &:empty {
-        display: none;
-      }
-    }
-  }
-}
-</style>
+<style scoped></style>
