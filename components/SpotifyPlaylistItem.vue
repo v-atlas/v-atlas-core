@@ -16,15 +16,17 @@
         alt="Fallback Image"
       />
       <div class="flex flex-col justify-center">
-        <span class="text-xl font-bold">{{ playlist.name }}</span>
+        <span class="text-xl font-bold md:w-56">{{ playlist.name }}</span>
         <p class="line-clamp-2 text-clip text-sm md:w-40">
           {{ playlist.description || playlist.name }}
         </p>
       </div>
 
-      <div class="ml-auto flex flex-col justify-end gap-2 align-bottom">
+      <div
+        class="xs:flex-row ml-auto flex flex-col justify-end gap-2 align-bottom md:flex-col"
+      >
         <p class="text-right">{{ playlist.tracks.total }} Tracks</p>
-        <div class="flex flex-row gap-2 md:flex-col">
+        <div class="flex flex-row gap-2 max-[428px]:flex-col md:flex-col">
           <a
             class="rounded-lg bg-emerald-500/50 px-4 py-3 font-bold no-underline transition-colors duration-200 hover:bg-emerald-300/50"
             :href="playlist.external_urls.spotify"
