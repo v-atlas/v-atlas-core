@@ -41,7 +41,7 @@ const props = withDefaults(
   }>(),
   {
     did: "",
-  }
+  },
 );
 
 const qrCanvas = ref<HTMLCanvasElement | null>(null);
@@ -80,8 +80,6 @@ watch(() => props.did.length, generateQRCode);
 
 <style lang="scss" scoped>
 div.qr-did {
-  background-color: rgba($color: $primary-yellow, $alpha: 0.3);
-  border: 3px solid $primary-dark;
   border-radius: 6px;
   max-width: max-content;
 
@@ -92,8 +90,6 @@ div.qr-did {
     z-index: 1;
     height: 100%;
     width: 100%;
-
-    background-color: rgba($color: $primary-dark, $alpha: 0.4);
 
     display: none;
 
@@ -134,7 +130,6 @@ div.qr-did {
     align-items: center;
     gap: 10px;
 
-    background-color: rgba($color: $primary-dark, $alpha: 0.2);
     padding: 10px;
 
     span.did-value {

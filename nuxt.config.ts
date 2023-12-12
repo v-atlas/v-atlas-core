@@ -2,6 +2,8 @@
 export default defineNuxtConfig({
   modules: [
     "@nuxtjs/google-fonts",
+    "@nuxtjs/tailwindcss",
+    "@pinia-plugin-persistedstate/nuxt",
     [
       "@pinia/nuxt",
       {
@@ -9,7 +11,6 @@ export default defineNuxtConfig({
         autoImports: ["acceptHMRUpdate"],
       },
     ],
-    "@pinia-plugin-persistedstate/nuxt",
   ],
   pinia: {
     storesDirs: ["stores"],
@@ -22,10 +23,13 @@ export default defineNuxtConfig({
       },
     },
   },
-  $development: {
-    devtools: { enabled: true },
-  },
   devtools: { enabled: true },
+  postcss: {
+    plugins: {
+      tailwindcss: {},
+      autoprefixer: {},
+    },
+  },
   googleFonts: {
     display: "swap",
     preconnect: true,
@@ -38,15 +42,6 @@ export default defineNuxtConfig({
       hmr: {
         protocol: "ws",
         host: "0.0.0.0",
-      },
-    },
-    css: {
-      preprocessorOptions: {
-        scss: {
-          additionalData: `
-          @use "normalize.css";
-          @use "@/assets/scss/_colors.scss" as *;`,
-        },
       },
     },
   },

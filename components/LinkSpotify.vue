@@ -1,14 +1,14 @@
 <template>
-  <div class="link-spotify-widget">
+  <div class="rounded-lg border-2 border-white/50 p-2">
     <span class="placeholder" v-if="pending">
       Please wait
       <font-awesome-icon icon="fa-solid fa-circle-notch" spin />
     </span>
 
-    <div class="actions" v-else>
+    <div class="flex flex-row gap-2" v-else>
       <template v-if="data?.success">
         <button
-          class="action success"
+          class="rounded bg-emerald-700 px-4 py-2 font-bold text-white transition-colors duration-200 hover:enabled:bg-emerald-600 disabled:bg-emerald-500/50"
           @click="handleConnectToSpotify"
           :disabled="isSpotifyConnected"
         >
@@ -18,7 +18,7 @@
         </button>
 
         <button
-          class="action danger icon"
+          class="rounded bg-red-500/50 px-4 py-2 font-bold text-white transition-colors duration-200 hover:bg-red-600/50"
           v-if="isSpotifyConnected"
           @click="handleDisconnectFromSpotify"
         >
@@ -26,7 +26,7 @@
         </button>
       </template>
 
-      <span class="placeholder danger" v-else>
+      <span class="rounded-md bg-red-500 p-2 text-sm font-bold" v-else>
         Spotify is unavailable at this time
         <font-awesome-icon icon="fa-brands fa-spotify" />
       </span>
@@ -53,35 +53,4 @@ function handleDisconnectFromSpotify() {
 }
 </script>
 
-<style lang="scss" scoped>
-div.link-spotify-widget {
-  border: 2px solid $primary-green;
-  padding: 5px;
-  border-radius: 5px;
-  span.placeholder {
-    font-size: 0.9rem;
-    background-color: $primary-dark;
-    color: $primary-light;
-    padding: 10px 20px;
-    border-radius: 5px;
-
-    text-transform: capitalize;
-
-    &.danger {
-      background-color: $primary-red;
-    }
-
-    svg {
-      font-size: 1rem;
-      margin-left: 10px;
-    }
-  }
-
-  div.actions {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 10px;
-  }
-}
-</style>
+<style scoped></style>
