@@ -1,15 +1,15 @@
-@import '@fortawesome/fontawesome-svg-core/styles.css';
-@import "~/assets/scss/elements.scss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 html,
 body {
   font-family: "Lato", sans-serif;
-  background-color: $primary-dark;
+  background-color: theme(colors.athens-gray.950);
   background-image: url("~/assets/images/denim.webp");
   background-repeat: repeat;
-  color: $primary-light;
+  color: theme(colors.white);
   height: 100%;
-  font-size: 16px;
 }
 
 ::-webkit-scrollbar {
@@ -19,12 +19,12 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background-color: $primary-dark;
+  background-color: theme(colors.athens-gray.950);
   border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: $primary-blue;
+  background-color: theme(colors.broom.500 / 50%);
   transition: background-color 200ms ease-out;
 
   border-radius: 5px;
@@ -32,10 +32,10 @@ body {
 }
 
 ::-webkit-scrollbar-corner {
-  background-color: $primary-blue;
+  background-color: theme(colors.broom.500 / 50%);
 }
 
 ::-webkit-scrollbar-thumb:hover {
   transition: background-color 200ms ease-in;
-  background-color: $primary-blue;
+  background-color: theme(colors.broom.500 / 50%);
 }
