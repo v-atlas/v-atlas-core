@@ -1,13 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 html,
 body {
-  font-family: "Lato", sans-serif;
-  background-color: theme(colors.athens-gray.950);
-  background-image: url("~/assets/images/denim.webp");
-  background-repeat: repeat;
+  font-family: "Plus Jakarta Sans", Helvetica, sans-serif;
+  background-color: #141725;
   color: theme(colors.white);
   height: 100%;
 }
@@ -19,7 +19,7 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background-color: theme(colors.athens-gray.950);
+  background-color: #141725;
   border-radius: 5px;
 }
 
@@ -38,4 +38,8 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   transition: background-color 200ms ease-in;
   background-color: theme(colors.broom.500 / 50%);
+}
+
+.bg-gradient-sidenav {
+  background-color: linear-gradient(180deg, rgba(251, 54, 103, 0.14) 0%, rgba(251, 54, 103, 0.04) 65.29%);
 }

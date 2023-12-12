@@ -1,14 +1,11 @@
 <template>
-  <div class="px-10 py-20 md:px-20">
-    <nuxt-link
-      to="/apps/spotify/manage"
-      class="rounded-md bg-emerald-800 p-5 font-bold no-underline transition-colors duration-200 hover:bg-emerald-600"
-      >Manage Spotify Data</nuxt-link
-    >
+  <div class="landing">
+   <home/>
   </div>
 </template>
 
-<script lang="ts" setup>
+<script setup>
+
 useHead({
   title: "V-Atlas",
   meta: [
@@ -27,4 +24,5 @@ useSeoMeta({
 });
 </script>
 
-<style scoped></style>
+<style lang="scss" scoped>
+</style>
