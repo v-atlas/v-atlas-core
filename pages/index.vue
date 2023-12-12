@@ -56,7 +56,7 @@ div.landing {
       flex-direction: row;
       gap: 20px;
 
-      background-color: rgba($color: $primary-dark, $alpha: 0.2);
+      // background-color: rgba($color: $primary-dark, $alpha: 0.2);
       padding: 10px 5px;
 
       width: max-content;
@@ -65,7 +65,7 @@ div.landing {
     div.action-content {
       padding: 10px;
 
-      background-color: rgba($color: $primary-dark, $alpha: 0.2);
+      // background-color: rgba($color: $primary-dark, $alpha: 0.2);
 
       &:empty {
         display: none;

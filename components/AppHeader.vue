@@ -1,46 +1,22 @@
 <template>
-  <nav>
-    <div class="content">
-      <div class="left">
-        <div class="brand">
-          <div class="brand-icon">
-            <nuxt-link to="/">
-              <span class="brand-text"> V Atlas </span>
-            </nuxt-link>
+  <header>
+    <nav class="border-b-2 border-b-broom-500 bg-black px-10 py-5 md:px-20">
+      <div class="container">
+        <div class="left">
+          <div class="brand">
+            <div class="brand-icon">
+              <nuxt-link to="/">
+                <span class="brand-text text-3xl font-bold"> V Atlas </span>
+              </nuxt-link>
+            </div>
           </div>
         </div>
+        <div class="right"></div>
       </div>
-      <div class="right"></div>
-    </div>
-  </nav>
+    </nav>
+  </header>
 </template>
 
 <script lang="ts" setup></script>
 
-<style lang="scss" scoped>
-nav {
-  background-color: $primary-dark;
-  border-bottom: 2px solid $primary-yellow;
-  padding: 20px 20px;
-
-  @media screen and (min-width: 768px) {
-    padding: 20px 50px;
-  }
-  div.content {
-    div.left {
-      div.brand {
-        div.brand-icon {
-          a {
-            text-decoration: none;
-            span.brand-text {
-              font-size: 1.5rem;
-              font-weight: 700;
-              color: $primary-light;
-            }
-          }
-        }
-      }
-    }
-  }
-}
-</style>
+<style scoped></style>
