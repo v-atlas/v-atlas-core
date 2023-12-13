@@ -54,5 +54,8 @@ export default defineNuxtConfig({
     spotifyRedirectUrl: "",
     spotifyApiUrl: "https://api.spotify.com",
     spotifyAccountUrl: "https://accounts.spotify.com",
+    googleDriveApiUrl: "https://www.googleapis.com/auth/drive.file",
+    googleClientId: "",
+    googleClientSecret: "",
   },
 });
