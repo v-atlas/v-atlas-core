@@ -8,6 +8,7 @@
 
 <script setup lang="ts">
 import SpotifyIcon from '~/components/AppIcons/SpotifyIcon.vue';
+import GoogleDriveIcon from '~/components/AppIcons/GoogleDriveIcon.vue';
 import { useAuthStore } from '~/stores/auth';
 import type { ConnectedApp } from '~/types';
 
@@ -32,27 +33,20 @@ useSeoMeta({
 const authStore = useAuthStore();
 const { isSpotifyConnected } = storeToRefs(authStore);
 
-const apps = ref<ConnectedApp[]>([
+const apps = shallowRef<ConnectedApp[]>([
     {
         appIcon: SpotifyIcon,
         appName: "Spotify",
         description: "Spotify is a widely popular digital music streaming service.",
-        isConnected: true,
+        isConnected: isSpotifyConnected.value,
         link: '/apps/spotify/manage'
     },
     {
-        appIcon: SpotifyIcon,
-        appName: "Spotify",
-        description: "Spotify is a widely popular digital music streaming service.",
-        isConnected: true,
-        link: '/apps/spotify/manage'
-    },
-    {
-        appIcon: SpotifyIcon,
-        appName: "Spotify",
-        description: "Spotify is a widely popular digital music streaming service.",
+        appIcon: GoogleDriveIcon,
+        appName: "Google Drive",
+        description: "Google Drive can provide encrypted and secure access to your files.",
         isConnected: false,
-        link: '/apps/spotify/manage'
-    }
+        link: '/apps/google-drive/manage'
+    },
 ])
 </script>
