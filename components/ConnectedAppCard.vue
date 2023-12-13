@@ -127,7 +127,10 @@ async function fetchAuthorizationUrl(app: SupportedApps) {
 
   switch (app) {
     case SupportedApps.Spotify: {
-      const { data } = await useFetch("/api/fetch-spotify-authorization-url");
+      const { data } = await useFetch("/api/fetch-spotify-authorization-url", {
+        retry: 3,
+        retryDelay: 1000,
+      });
       if (data.value?.success) {
         authorizationUrl.value = data.value?.url;
       }
@@ -138,6 +141,10 @@ async function fetchAuthorizationUrl(app: SupportedApps) {
     case SupportedApps.GoogleDrive: {
       const { data } = await useFetch(
         "/api/google-drive-fetch-authorization-url",
+        {
+          retry: 3,
+          retryDelay: 1000,
+        },
       );
       if (data.value?.success) {
         authorizationUrl.value = data.value?.url;
