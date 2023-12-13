@@ -1,6 +1,6 @@
 <template>
   <header>
-    <nav class="bg-primary fixed top-0 z-50 w-full">
+    <nav class="fixed top-0 z-50 w-full bg-primary">
       <div class="px-3 py-5 sm:px-8">
         <div class="flex items-center justify-between">
           <div
@@ -62,7 +62,7 @@
                     alt="user photo"
                   />
                   <div class="" role="none">
-                    <p class="text-white" role="none">Clinton Dike</p>
+                    <p class="text-white" role="none">John Doe</p>
                     <p class="text-xs font-medium text-gray-500" role="none">
                       Owner
                     </p>
@@ -75,43 +75,36 @@
                 </button>
               </div>
               <div
-                class="bg-primary border-grey-800 z-50 my-4 hidden list-none divide-y divide-gray-600 rounded border text-base shadow"
+                class="border-grey-800 z-50 my-4 hidden list-none divide-y divide-gray-600 rounded border bg-primary text-base shadow"
                 id="dropdown-user"
               >
                 <div class="px-4 py-3" role="none">
-                  <p class="text-sm text-white" role="none">Clinton Dike</p>
+                  <p class="text-sm text-white" role="none">John Doe</p>
                   <p
                     class="truncate text-sm font-medium text-gray-300"
                     role="none"
                   >
-                    clinton@vatlas.com
+                    example@vatlas.dev
                   </p>
                 </div>
                 <ul class="py-1" role="none">
                   <li>
-                    <a
-                      href="#"
+                    <nuxt-link
+                      to="/"
                       class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-600 hover:text-white"
                       role="menuitem"
-                      >Dashboard</a
                     >
+                      Dashboard
+                    </nuxt-link>
                   </li>
                   <li>
-                    <a
-                      href="#"
+                    <nuxt-link
+                      to="/settings"
                       class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-600 hover:text-white"
                       role="menuitem"
-                      >Settings</a
                     >
-                  </li>
-                 
-                  <li>
-                    <a
-                      href="#"
-                      class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-600 hover:text-white"
-                      role="menuitem"
-                      >Sign out</a
-                    >
+                      Settings
+                    </nuxt-link>
                   </li>
                 </ul>
               </div>
