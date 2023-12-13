@@ -1,4 +1,5 @@
 <template>
+  
   <div class="rounded-lg border-2 border-white/50 p-2">
     <span class="placeholder" v-if="pending">
       Please wait
