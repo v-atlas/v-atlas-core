@@ -34,7 +34,7 @@ export default defineNuxtConfig({
     display: "swap",
     preconnect: true,
     families: {
-      Lato: [300, 400, 500, 600, 700],
+      Lato: true,
     },
   },
   vite: {
