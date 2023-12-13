@@ -61,6 +61,9 @@ function handleConnectToSpotify() {
 
 function handleDisconnectFromSpotify() {
   authStore.clearSpotifyAccessToken();
+  navigateTo({
+    path: "/apps",
+  });
 }
 </script>
 

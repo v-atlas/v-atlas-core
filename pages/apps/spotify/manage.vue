@@ -1,11 +1,11 @@
 <template>
-  <div class="landing">
-    <div class="content">
-      <div class="actions">
+  <div>
+    <div class="flex flex-col">
+      <div class="flex w-max flex-col gap-[20px] px-[5px] py-[10px]">
         <link-spotify />
       </div>
 
-      <div class="action-content">
+      <div class="p-[10px]">
         <div class="spotify-actions" v-if="isSpotifyConnected">
           <spotify-playlist-manager />
         </div>
@@ -40,37 +40,4 @@ const authStore = useAuthStore();
 const { isSpotifyConnected } = storeToRefs(authStore);
 </script>
 
-<style lang="scss" scoped>
-div.landing {
-  padding: 20px 20px;
-
-  @media screen and (min-width: 768px) {
-    padding: 20px 50px;
-  }
-
-  div.content {
-    display: flex;
-    flex-direction: column;
-    div.actions {
-      display: flex;
-      flex-direction: row;
-      gap: 20px;
-
-      // background-color: rgba($color: $primary-dark, $alpha: 0.2);
-      padding: 10px 5px;
-
-      width: max-content;
-    }
-
-    div.action-content {
-      padding: 10px;
-
-      // background-color: rgba($color: $primary-dark, $alpha: 0.2);
-
-      &:empty {
-        display: none;
-      }
-    }
-  }
-}
-</style>
+<style scoped></style>
