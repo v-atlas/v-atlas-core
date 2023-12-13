@@ -4,13 +4,14 @@ export const useAuthStore = defineStore(
   "auth",
   () => {
     const spotifyAccessToken = ref<string>("");
+    const googleDriveAccessToken = ref<string>("");
+
     const isSpotifyConnected = computed<boolean>(() =>
       Boolean(spotifyAccessToken.value && spotifyAccessToken.value.length > 0),
     );
 
-    const googleClientApiKey = ref<string>("");
     const isGoogleConnected = computed<boolean>(() =>
-      Boolean(googleClientApiKey.value && googleClientApiKey.value.length > 0),
+      Boolean(googleDriveAccessToken.value && googleDriveAccessToken.value.length > 0),
     );
 
     function setSpotifyAccessToken(token: string) {
@@ -21,28 +22,28 @@ export const useAuthStore = defineStore(
       spotifyAccessToken.value = "";
     }
 
-    function setGoogleClientApiKey(apiKey: string) {
-      googleClientApiKey.value = apiKey;
+    function setGoogleDriveAccessToken(token: string) {
+      googleDriveAccessToken.value = token;
     }
 
-    function clearGoogleClientApiKey() {
-      googleClientApiKey.value = "";
+    function clearGoogleDriveAccessToken() {
+      googleDriveAccessToken.value = "";
     }
 
     return {
       spotifyAccessToken,
       isSpotifyConnected,
-      googleClientApiKey,
+      googleDriveAccessToken,
       isGoogleConnected,
       setSpotifyAccessToken,
       clearSpotifyAccessToken,
-      setGoogleClientApiKey,
-      clearGoogleClientApiKey,
+      setGoogleDriveAccessToken,
+      clearGoogleDriveAccessToken,
     };
   },
   {
     persist: {
-      paths: ["spotifyAccessToken"],
+      paths: ["spotifyAccessToken", "googleDriveAccessToken"],
       storage: persistedState.cookiesWithOptions({
         sameSite: "strict",
       }),
