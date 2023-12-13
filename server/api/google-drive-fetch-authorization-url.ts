@@ -23,10 +23,14 @@ export default defineEventHandler(async (_event) => {
     });
 
 
+    if (!authorizationUrl) {
+      throw new Error("Failed to generate authorization URL");
+    }
+
     return {
       success: true,
       message: "Successfully authenticated Google account",
-      authorizationUrl: authorizationUrl,
+      url: authorizationUrl,
     };
   } catch (err) {
 
@@ -34,7 +38,7 @@ export default defineEventHandler(async (_event) => {
       return {
         success: false,
         message: err.message,
-        authorizationUrl: null,
+        url: null,
       };
     }
 
@@ -42,7 +46,7 @@ export default defineEventHandler(async (_event) => {
     return {
       success: false,
       message: "Failed to authenticate Google account",
-      authorizationUrl: null,
+      url: null,
     };
   }
 });
