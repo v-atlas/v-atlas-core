@@ -1,17 +1,15 @@
 <template>
-  <div
-    class="flex min-h-screen flex-col justify-center px-10 align-middle md:px-20"
-  >
+  <div class="flex flex-col justify-center px-10 align-middle md:px-20">
     <template v-if="pending">
       <font-awesome-icon
         icon="fa-solid fa-circle-notch"
-        class="text-4xl"
+        class="absolute left-1/2 top-1/2 m-auto -ml-3 translate-x-1/2 translate-y-1/2 transform text-4xl md:ml-24"
         spin
       />
     </template>
 
     <template v-else>
-      <div class="m-auto flex max-w-fit flex-col gap-2">
+      <div class="m-auto flex max-w-fit flex-col gap-2 p-24">
         <p class="max-w-md text-sm" v-if="!data?.success">
           {{ data?.message ?? "Unable to authorize Spotify" }}
         </p>
