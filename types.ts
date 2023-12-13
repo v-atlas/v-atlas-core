@@ -1,3 +1,5 @@
+import type { Component } from "vue";
+
 export type SpotifyPlaylistItem = {
   collaborative: boolean;
   description: string;
@@ -128,4 +130,12 @@ export type ExternalIDS = {
 
 export type VideoThumbnail = {
   url: null;
+};
+
+export type ConnectedApp = {
+  appName: string;
+  description: string;
+  isConnected: boolean;
+  appIcon: Component;
+  link: string;
 };

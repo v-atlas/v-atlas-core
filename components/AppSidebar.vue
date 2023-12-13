@@ -136,8 +136,8 @@
         <p class="px-11 py-3 text-xs text-gray-500">MAIN MENU</p>
         <ul class="mb-24 space-y-4 font-medium">
           <li>
-            <a
-              href="/"
+            <NuxtLink
+              to="/"
               class="sidenav group flex items-center rounded-lg border-l-4 border-transparent px-10 py-3 text-white hover:border-[#fb3667] hover:bg-gradient-to-r hover:from-[#fb366756]"
               :class="{
                 'border-[#fb3667] bg-gradient-to-r from-[#fb366756]':
@@ -172,12 +172,12 @@
                 :class="{ 'text-[#fb3667]': currentPath.value === '/' }"
                 >Dashboard</span
               >
-            </a>
+            </NuxtLink>
           </li>
 
           <li>
-            <a
-              href="/data"
+            <NuxtLink
+              to="/data"
               class="sidenav group flex items-center rounded-lg border-l-4 border-transparent px-10 py-3 text-white hover:border-[#fb3667] hover:bg-gradient-to-r hover:from-[#fb366756]"
               :class="{
                 'border-[#fb3667] bg-gradient-to-r from-[#fb366756]':
@@ -210,11 +210,11 @@
                 :class="{ 'text-[#fb3667]': currentPath.value === '/data' }"
                 >Data</span
               >
-            </a>
+            </NuxtLink>
           </li>
           <li>
-            <a
-              href="/connectedapps"
+            <NuxtLink
+              to="/apps"
               class="sidenav group flex items-center rounded-lg border-l-4 border-transparent px-10 py-3 text-white hover:border-[#fb3667] hover:bg-gradient-to-r hover:from-[#fb366756]"
               :class="{
                 'border-[#fb3667] bg-gradient-to-r from-[#fb366756]':
@@ -244,7 +244,7 @@
                 }"
                 >Connected Apps</span
               >
-            </a>
+            </NuxtLink>
           </li>
           <li>
             <a
