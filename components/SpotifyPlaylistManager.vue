@@ -37,8 +37,11 @@
 <script lang="ts" setup>
 import { storeToRefs } from "pinia";
 import { useAuthStore } from "~/stores/auth";
+import { useSpotifyStore } from "~/stores/spotify";
 
 const authStore = useAuthStore();
+const spotifyStore = useSpotifyStore();
+
 const { spotifyAccessToken } = storeToRefs(authStore);
 
 const {

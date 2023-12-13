@@ -1,17 +1,24 @@
 <template>
   <NuxtLayout>
-    <div class="error-page">
-      <div class="prose">
-        <h3>Something Happened!</h3>
-        <p v-if="isPageNotFound">
+    <div class="flex min-h-screen flex-col justify-center align-middle">
+      <div class="mx-auto flex flex-col text-center">
+        <h3 class="my-2 text-2xl font-bold">Something Happened!</h3>
+        <p v-if="isPageNotFound" class="text-sm">
           The page you are looking for does not exist.
         </p>
 
-        <p v-else>
+        <p v-else class="text-sm">
           {{ error?.message }}
         </p>
 
-        <button @click="clearPageError" class="action">Home</button>
+        <button
+          @click="clearPageError"
+          class="mx-auto my-5 w-40 rounded-md bg-broom-500 p-2 text-black transition-colors duration-200 hover:bg-broom-600"
+        >
+          Home
+
+          <font-awesome-icon icon="fa-solid fa-home" />
+        </button>
       </div>
     </div>
   </NuxtLayout>
@@ -40,29 +47,4 @@ async function clearPageError() {
 }
 </script>
 
-<style scoped lang="scss">
-div.error-page {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-
-  min-height: 60vh;
-
-  div.prose {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    h3 {
-      font-size: 1.5rem;
-      font-weight: 600;
-    }
-
-    p {
-      padding: 0;
-      font-size: 0.9rem;
-    }
-  }
-}
-</style>
+<style scoped></style>

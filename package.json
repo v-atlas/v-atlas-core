@@ -35,9 +35,11 @@
     "@vueuse/core": "^10.6.1",
     "@web5/api": "^0.8.2",
     "googleapis": "105",
+    "flowbite": "^2.2.0",
     "normalize.css": "^8.0.1",
     "pinia": "^2.1.7",
     "qrcode": "^1.5.3",
+    "tailwind-merge": "^2.1.0",
     "vee-validate": "^4.11.8",
     "zod": "^3.22.4"
   }
