@@ -51,7 +51,6 @@ div.landing {
   div.content {
     display: flex;
     flex-direction: column;
-    gap: 50px;
     div.actions {
       display: flex;
       flex-direction: row;

@@ -76,9 +76,11 @@ export default {
           900: "#7c1f3c",
           950: "#4b0c20",
         },
-        primary: '#23283B',
-        secondary: '#141725',
-        "dark": '#444a5e'
+        primary: '#141725',
+        "atlas-red": '#fb3667',
+        "dark": '#444a5e',
+        subdued: '#737994',
+        'light-gray': '#202437'
       },
       backgroundImage: {
         'sidenav-gradient': 'linear-gradient(180deg, rgba(251, 54, 103, 0.14) 0%, rgba(251, 54, 103, 0.04) 65.29%)',

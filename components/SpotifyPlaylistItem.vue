@@ -1,53 +1,54 @@
 <template>
-  <div class="flex flex-col">
-    <div
-      class="flex flex-col gap-4 rounded-md border-2 bg-emerald-500/20 p-4 transition-colors duration-200 hover:border-emerald-500/50 md:p-2 xl:flex-row"
-    >
-    <div class="flex flex-col xl:flex-row gap-6">
-
-
+  <div class="bg-primary p-[14px]">
+    <div class="relative mb-[14px]">
       <img
         loading="lazy"
-        class="max-h-40 max-w-fit rounded-md border-2 border-white md:mx-0"
+        class="mx-auto rounded-[2px]"
         v-if="playlist.images.length > 0"
         :src="playlist.images[0].url"
         alt="Playlist Cover"
       />
       <img
         v-else
-        class="rounded-md border-2 border-white md:mx-0 md:h-40 md:max-w-xs"
+        class="mx-auto rounded-[2px]"
         src="~/assets/images/spotify.png"
         alt="Fallback Image"
       />
-      <div class="flex flex-col justify-center">
-        <span class="text-xl line-clamp-1 font-bold md:max-w-56">{{ playlist.name }}</span>
-        <p class="line-clamp-1 text-clip text-sm md:w-40 xl:max-w-[300px]">
+      <div
+        class="details-box absolute bottom-0 left-0 right-0 mx-auto w-[80%] rounded-t-[11.3px] border-x border-t border-[#ffffff4e] p-4"
+      >
+        <h4 class="line-clamp-1">{{ playlist.name }}</h4>
+        <p class="line-clamp-1 text-xs text-[#FFFFFF9E]">
           {{ playlist.description || playlist.name }}
         </p>
       </div>
     </div>
-
-      <div class="ml-auto flex flex-col justify-end gap-2 align-bottom md:flex-col"
-      >
-        <spotify-tracks-item :playlist="playlist" />
-        <div class="flex flex-row gap-2 max-[480px]:flex-col md:flex-col">
-          <a
-            class="flex flex-row justify-between gap-5 rounded-lg bg-emerald-500/50 px-4 py-3 align-middle no-underline transition-colors duration-200 hover:bg-emerald-800/90"
-            :href="playlist.external_urls.spotify"
-            target="blank"
-          >
-            <span class="font-bold"> View on Spotify </span>
-            <font-awesome-icon icon="fa-brands fa-spotify" class="my-auto" />
-          </a>
-
-          <button
-            class="flex flex-row justify-between gap-5 rounded-lg bg-broom-500 px-4 py-3 align-middle text-black transition-colors duration-200 hover:bg-broom-300"
-          >
-            <span class="font-bold"> Add to My Atlas </span>
-            <font-awesome-icon icon="fa-plus" class="my-auto" />
-          </button>
-        </div>
+    <div class="mb-[14px] flex justify-between">
+      <div>
+        <h4 class="line-clamp-1">{{ playlist.name }}</h4>
+        <p class="line-clamp-1 text-sm text-subdued">
+          {{ playlist.description || playlist.name }}
+        </p>
       </div>
+      <div class="icon">
+        <img src="~/assets/images/menu.svg" alt="" />
+      </div>
+    </div>
+    <div class="flex flex-col gap-3">
+      <!-- <spotify-tracks-item :playlist="playlist" /> -->
+      <a
+        :href="playlist.external_urls.spotify"
+        target="blank"
+        class="rounded-md bg-gradient-to-l from-[rgba(67,207,108,0.83)] px-7 py-[10px] text-center"
+        >View on Spotify</a
+      >
+      <a
+        href="/connected-apps/play-songs"
+        class="flex items-center justify-center gap-2 rounded-md border border-gray-800 bg-[linear-gradient(180deg,rgb(27.34,31.82,49.71)0%,rgba(27.34,31.82,49.71,0.59)100%)] px-7 py-[10px] text-[#D1D1D5]"
+      >
+        <img src="~/assets/images/play.svg" alt="play icon" />
+        <span>Play Songs</span>
+      </a>
     </div>
   </div>
 </template>
@@ -63,4 +64,10 @@ defineProps<{
 const spotifyStore = useSpotifyStore();
 </script>
 
-<style scoped></style>
+<style scoped>
+.details-box {
+  -webkit-backdrop-filter: blur(22.69px) brightness(100%);
+  backdrop-filter: blur(22.69px) brightness(100%);
+  background-color: #ffffff33;
+}
+</style>

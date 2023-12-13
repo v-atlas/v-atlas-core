@@ -1,29 +1,39 @@
 <template>
-  
-  <div class="rounded-lg border-2 border-white/50 p-2">
+  <div>
     <span class="placeholder" v-if="pending">
       Please wait
       <font-awesome-icon icon="fa-solid fa-circle-notch" spin />
     </span>
 
-    <div class="flex flex-row gap-2" v-else>
+    <div class="relative flex flex-row gap-2" v-else>
       <template v-if="data?.success">
         <button
-          class="rounded bg-emerald-700 px-4 py-2 font-bold text-white transition-colors duration-200 hover:enabled:bg-emerald-600 disabled:bg-emerald-500/50"
+          class="relative flex items-center gap-[17px] overflow-hidden rounded-[10px] bg-primary px-[21px] py-3 transition duration-300 ease-in-out hover:bg-[#1dd35d4d] disabled:hover:bg-primary"
           @click="handleConnectToSpotify"
+          :class="{ 'pr-12': isSpotifyConnected }"
           :disabled="isSpotifyConnected"
         >
+          <div
+            class="absolute -left-20 -top-20 h-32 w-32 rounded-[64px] bg-[#1DD35E99] blur-[84px]"
+          ></div>
+          <img
+            class="h-12 w-12"
+            src="~/assets/images/spotify.svg"
+            alt="spotify icon"
+          />
           {{ isSpotifyConnected ? "Connected" : "Connect" }}
           to Spotify
-          <font-awesome-icon icon="fa-brands fa-spotify" />
         </button>
 
         <button
-          class="rounded bg-red-500/50 px-4 py-2 font-bold text-white transition-colors duration-200 hover:bg-red-600/50"
+          class="absolute right-3 top-[9px]"
           v-if="isSpotifyConnected"
           @click="handleDisconnectFromSpotify"
         >
-          <font-awesome-icon icon="fa-solid fa-times-circle" />
+          <font-awesome-icon
+            icon="fa-solid fa-times-circle"
+            class="text-subdued transition-colors duration-300 hover:text-gray-800"
+          />
         </button>
       </template>
 
