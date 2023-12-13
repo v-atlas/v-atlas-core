@@ -77,7 +77,7 @@ watch(
     if (data?.value?.success) {
       authStore.setGoogleDriveAccessToken(data.value.token);
 
-      navigateTo("/connected-apps");
+      navigateTo("/apps");
     }
   },
 );
