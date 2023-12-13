@@ -76,7 +76,7 @@ watch(
     if (data?.value?.success) {
       authStore.setSpotifyAccessToken(data.value.token);
 
-      navigateTo("/apps/spotify/manage");
+      navigateTo("/apps");
     }
   },
 );
