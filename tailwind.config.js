@@ -5,6 +5,7 @@ export default {
     extend: {
       colors: {
         broom: {
+          DEFAULT: "#ffec19",
           50: "#fdfee8",
           100: "#fdffc2",
           200: "#feff87",
@@ -18,6 +19,7 @@ export default {
           950: "#432705",
         },
         lochmara: {
+          DEFAULT: "#197bbd",
           50: "#f2f8fd",
           100: "#e3f0fb",
           200: "#c1e1f6",
@@ -44,6 +46,7 @@ export default {
           950: "#24282d",
         },
         emerald: {
+          DEFAULT: "#44cf6c",
           50: "#f1fcf3",
           100: "#defae6",
           200: "#bff3cd",
@@ -57,6 +60,7 @@ export default {
           950: "#082b14",
         },
         blush: {
+          DEFAULT: "#c62e65",
           50: "#fcf3f7",
           100: "#fbe8f1",
           200: "#f8d2e5",
