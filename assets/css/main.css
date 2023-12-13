@@ -9,7 +9,6 @@ body {
   font-family: "Plus Jakarta Sans", Helvetica, sans-serif;
   background-color: #0c0e18;
   color: theme(colors.white);
-  height: 100%;
 }
 
 ::-webkit-scrollbar {

@@ -34,7 +34,8 @@ export default defineNuxtConfig({
     display: "swap",
     preconnect: true,
     families: {
-      Lato: true,
+      "Plus Jakarta Sans": true,
+      "Helvetica Neue": true,
     },
   },
   vite: {

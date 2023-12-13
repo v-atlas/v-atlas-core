@@ -1,11 +1,10 @@
 <template>
-  <div class="landing">
-   <home/>
+  <div class="content">
+    <p>Welcome</p>
   </div>
 </template>
 
 <script setup>
-
 useHead({
   title: "V-Atlas",
   meta: [
@@ -24,5 +23,4 @@ useSeoMeta({
 });
 </script>
 
-<style lang="scss" scoped>
-</style>
+<style scoped></style>
