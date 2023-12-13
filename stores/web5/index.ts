@@ -1,15 +1,15 @@
 import { defineStore } from "pinia";
 
-const RecordTypes = {
+export const RecordTypes = {
   Text: "text/plain",
   Image: "image/png",
   File: "application/octet-stream",
   Json: "application/json",
 } as const;
 
-type RecordType = (typeof RecordTypes)[keyof typeof RecordTypes];
+export type RecordType = (typeof RecordTypes)[keyof typeof RecordTypes];
 
-type RecordOptions =
+export type RecordOptions =
   | {
     data: string | Blob;
     schema?: string;
@@ -38,6 +38,16 @@ type RecordOptions =
 
 export const useWeb5Store = defineStore("web5", () => {
   const { $myDID: did, $web5: web5Instance } = useNuxtApp();
+  const { frontendUrl } = useRuntimeConfig();
+
+
+  function resolveSchemaUrl(schema?: string) {
+    if (!schema) {
+      return undefined;
+    }
+
+    return `${frontendUrl}/protocol/${schema}`;
+  }
 
   async function fetchRecord() { }
 
@@ -49,7 +59,7 @@ export const useWeb5Store = defineStore("web5", () => {
       data: options.data,
       message: {
         dataFormat: options.type,
-        schema: options.schema,
+        schema: resolveSchemaUrl(options.schema),
       },
     });
 
