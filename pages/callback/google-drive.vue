@@ -1,17 +1,19 @@
 <template>
-  <div class="flex flex-col justify-center px-10 align-middle md:px-20">
+  <div
+    class="flex min-h-screen flex-col justify-center px-10 align-middle md:px-20"
+  >
     <template v-if="pending">
       <font-awesome-icon
         icon="fa-solid fa-circle-notch"
-        class="absolute left-1/2 top-1/2 m-auto -ml-3 translate-x-1/2 translate-y-1/2 transform text-4xl md:ml-24"
+        class="text-4xl"
         spin
       />
     </template>
 
     <template v-else>
-      <div class="m-auto flex max-w-fit flex-col gap-2 p-24">
+      <div class="m-auto flex max-w-fit flex-col gap-2">
         <p class="max-w-md text-sm" v-if="!data?.success">
-          {{ data?.message ?? "Unable to authorize Spotify" }}
+          {{ data?.message ?? "Unable to authorize Google Drive" }}
         </p>
         <div class="actions" v-if="!data?.success">
           <nuxt-link to="/" class="font-bold text-white no-underline">
@@ -28,7 +30,7 @@ import { z } from "zod";
 import { useAuthStore } from "~/stores/auth";
 
 useHead({
-  title: "Spotify Integration | V-Atlas",
+  title: "Google Drive Integration | V-Atlas",
   meta: [
     {
       key: "keywords",
@@ -40,13 +42,13 @@ useHead({
 
 useSeoMeta({
   title:
-    "Spotify Integration | V-Atlas: Revolutionizing Digital Identity and Data Management",
+    "Google Drive Integration | V-Atlas: Revolutionizing Digital Identity and Data Management",
   description:
     "Discover V-Atlas, a visionary platform using Web5 technology to empower users with secure, flexible virtual storage and identity management. Control your digital presence like never before.",
 });
 
 definePageMeta({
-  middleware: "spotify-connect",
+  middleware: "google-connect",
 });
 
 const route = useRoute();
@@ -54,17 +56,18 @@ const authStore = useAuthStore();
 
 const callbackSchema = z.object({
   code: z.string(),
-  state: z.string(),
 });
 
-const { code, state } = callbackSchema.parse(route.query);
+const { code } = callbackSchema.parse(route.query);
 
 const { pending, data } = await useLazyFetch(
-  "/api/validate-spotify-authorization-request",
+  "/api/google-drive-validate-authorization-request",
   {
     server: false,
     method: "POST",
-    body: JSON.stringify({ code, state }),
+    body: {
+      code,
+    },
   },
 );
 
@@ -72,9 +75,9 @@ watch(
   () => pending.value,
   () => {
     if (data?.value?.success) {
-      authStore.setSpotifyAccessToken(data.value.token);
+      authStore.setGoogleDriveAccessToken(data.value.token);
 
-      navigateTo("/connected-apps");
+      navigateTo("/apps");
     }
   },
 );

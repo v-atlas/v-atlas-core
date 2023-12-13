@@ -1,3 +1,5 @@
+import type { Component } from "vue";
+
 export type SpotifyPlaylistItem = {
   collaborative: boolean;
   description: string;
@@ -130,9 +132,24 @@ export type VideoThumbnail = {
   url: null;
 };
 
+<<<<<<< HEAD
 export type keyInformation = {
   title: string
   value: string
   icon: string
   shadow: string
   }
+=======
+export const SupportedApps = {
+  Spotify: "Spotify",
+  GoogleDrive: "Google Drive",
+} as const
+
+export type SupportedApps = typeof SupportedApps[keyof typeof SupportedApps]
+
+export type ConnectedApp = {
+  type: SupportedApps;
+  description: string;
+  link: string;
+};
+>>>>>>> 60acd61b1700eb084b99dc9bf97dfe5f54243292
