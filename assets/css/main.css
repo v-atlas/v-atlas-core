@@ -7,11 +7,7 @@
 html,
 body {
   font-family: "Plus Jakarta Sans", Helvetica, sans-serif;
-<<<<<<< HEAD
-  background-color: #0C0E18;
-=======
   background-color: #0c0e18;
->>>>>>> 60acd61b1700eb084b99dc9bf97dfe5f54243292
   color: theme(colors.white);
 }
 
