@@ -50,13 +50,15 @@ export default defineNuxtConfig({
     transpile: ["@fortawesome/vue-fontawesome"],
   },
   runtimeConfig: {
+    // Spotify Configuration
     spotifyClientId: "",
     spotifyClientSecret: "",
     spotifyRedirectUrl: "",
     spotifyApiUrl: "https://api.spotify.com",
     spotifyAccountUrl: "https://accounts.spotify.com",
-    googleDriveApiUrl: "https://www.googleapis.com/auth/drive.file",
-    googleClientId: "",
-    googleClientSecret: "",
+    // Google Cloud Configuration
+    googleCloudClientId: "",
+    googleCloudClientSecret: "",
+    googleCloudRedirectUrl: "",
   },
 });
