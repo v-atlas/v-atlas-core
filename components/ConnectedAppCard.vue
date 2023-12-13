@@ -1,5 +1,5 @@
 <template>
-  <div class="rounded-[10px] bg-secondary p-6 pb-7">
+  <div class="rounded-[10px] bg-primary p-6 pb-7">
     <div class="flex flex-row justify-between">
       <div v-if="icon">
         <component :is="icon"></component>
