@@ -43,10 +43,16 @@ export default defineEventHandler(async (_event) => {
     });
 
     return {
-      type: "authorized_user",
-      client_id: googleClientId,
-      client_secret: googleClientSecret,
-      refresh_token: client.credentials.refresh_token,
+      success: true,
+      message: "Successfully authenticated Google account",
+      apiKey: client.apiKey,
     };
-  } catch (error) {}
+  } catch (error) {
+    console.log(error);
+    return {
+      success: false,
+      message: "Failed to authenticate Google account",
+      error,
+    };
+  }
 });
