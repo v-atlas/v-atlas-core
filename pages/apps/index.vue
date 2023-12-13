@@ -1,16 +1,14 @@
 <template>
-    <h1 class="text-xl mb-10">Connected Apps</h1>
-    <div class="grid gap-y-8 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-x-6">
-        <connected-app-card v-for="app in apps" :app-icon="app.appIcon" :app-name="app.appName" :description="app.description" :is-connected="app.isConnected" :link="app.link"  />
-    </div>
+  <h1 class="mb-10 text-xl">Connected Apps</h1>
+  <div
+    class="grid gap-x-6 gap-y-8 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4"
+  >
+    <connected-app-card v-for="app in apps" :app="app" />
+  </div>
 </template>
 
-
 <script setup lang="ts">
-import SpotifyIcon from '~/components/AppIcons/SpotifyIcon.vue';
-import GoogleDriveIcon from '~/components/AppIcons/GoogleDriveIcon.vue';
-import { useAuthStore } from '~/stores/auth';
-import type { ConnectedApp } from '~/types';
+import { type ConnectedApp, SupportedApps } from "~/types";
 
 useHead({
   title: "Connected Apps | V-Atlas",
@@ -30,23 +28,20 @@ useSeoMeta({
     "Discover V-Atlas, a visionary platform using Web5 technology to empower users with secure, flexible virtual storage and identity management. Control your digital presence like never before.",
 });
 
-const authStore = useAuthStore();
-const { isSpotifyConnected } = storeToRefs(authStore);
+const apps = computed<ConnectedApp[]>(() => {
+  const spotifyApp: ConnectedApp = {
+    type: SupportedApps.Spotify,
+    description: "Spotify is a widely popular digital music streaming service.",
+    link: "/apps/spotify/manage",
+  };
 
-const apps = shallowRef<ConnectedApp[]>([
-    {
-        appIcon: SpotifyIcon,
-        appName: "Spotify",
-        description: "Spotify is a widely popular digital music streaming service.",
-        isConnected: isSpotifyConnected.value,
-        link: '/apps/spotify/manage'
-    },
-    {
-        appIcon: GoogleDriveIcon,
-        appName: "Google Drive",
-        description: "Google Drive can provide encrypted and secure access to your files.",
-        isConnected: false,
-        link: '/apps/google-drive/manage'
-    },
-])
+  const googleDriveApp: ConnectedApp = {
+    type: SupportedApps.GoogleDrive,
+    description:
+      "Google Drive can provide encrypted and secure access to your files.",
+    link: "/apps/google-drive/manage",
+  };
+
+  return [spotifyApp, googleDriveApp];
+});
 </script>
