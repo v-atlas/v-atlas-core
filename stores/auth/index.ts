@@ -5,7 +5,12 @@ export const useAuthStore = defineStore(
   () => {
     const spotifyAccessToken = ref<string>("");
     const isSpotifyConnected = computed<boolean>(() =>
-      Boolean(spotifyAccessToken.value && spotifyAccessToken.value.length > 0)
+      Boolean(spotifyAccessToken.value && spotifyAccessToken.value.length > 0),
+    );
+
+    const googleClientApiKey = ref<string>("");
+    const isGoogleConnected = computed<boolean>(() =>
+      Boolean(googleClientApiKey.value && googleClientApiKey.value.length > 0),
     );
 
     function setSpotifyAccessToken(token: string) {
@@ -16,11 +21,23 @@ export const useAuthStore = defineStore(
       spotifyAccessToken.value = "";
     }
 
+    function setGoogleClientApiKey(apiKey: string) {
+      googleClientApiKey.value = apiKey;
+    }
+
+    function clearGoogleClientApiKey() {
+      googleClientApiKey.value = "";
+    }
+
     return {
       spotifyAccessToken,
       isSpotifyConnected,
+      googleClientApiKey,
+      isGoogleConnected,
       setSpotifyAccessToken,
       clearSpotifyAccessToken,
+      setGoogleClientApiKey,
+      clearGoogleClientApiKey,
     };
   },
   {
@@ -30,5 +47,5 @@ export const useAuthStore = defineStore(
         sameSite: "strict",
       }),
     },
-  }
+  },
 );
