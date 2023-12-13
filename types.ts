@@ -45,3 +45,10 @@ export type SpotifyPlaylistAPIResponse = {
   total: number;
   items: SpotifyPlaylistItem[];
 };
+
+export type keyInformation = {
+title: string
+value: string
+icon: string
+shadow: string
+}
