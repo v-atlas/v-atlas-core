@@ -34,7 +34,7 @@
     "@fortawesome/vue-fontawesome": "^3.0.5",
     "@vee-validate/zod": "^4.11.8",
     "@vueuse/core": "^10.6.1",
-    "@web5/api": "^0.8.2",
+    "@web5/api": "^0.8.3",
     "flowbite": "^2.2.0",
     "google-auth-library": "^9.4.1",
     "googleapis": "105",
