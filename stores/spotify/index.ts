@@ -18,6 +18,7 @@ export const useSpotifyStore = defineStore("spotify", () => {
   async function addAllPlaylistsToAtlas(playlists: SpotifyPlaylistItem[]) {
     for (const playlist of playlists) {
       await addPlaylistToAtlas(playlist);
+      break
     }
   }
 
