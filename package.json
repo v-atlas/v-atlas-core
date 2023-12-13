@@ -8,7 +8,8 @@
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
-    "init:tailwind": "pnpx tailwindcss init -p"
+    "init:tailwind": "pnpx tailwindcss init -p",
+    "sync-env": "sync-dotenv"
   },
   "devDependencies": {
     "@nuxt/devtools": "latest",
@@ -21,6 +22,7 @@
     "prettier": "^3.1.1",
     "prettier-plugin-tailwindcss": "^0.5.9",
     "sass": "^1.69.5",
+    "sync-dotenv": "^2.7.0",
     "vue": "^3.3.8",
     "vue-router": "^4.2.5"
   },
@@ -34,6 +36,8 @@
     "@vueuse/core": "^10.6.1",
     "@web5/api": "^0.8.2",
     "flowbite": "^2.2.0",
+    "google-auth-library": "^9.4.1",
+    "googleapis": "105",
     "normalize.css": "^8.0.1",
     "pinia": "^2.1.7",
     "qrcode": "^1.5.3",

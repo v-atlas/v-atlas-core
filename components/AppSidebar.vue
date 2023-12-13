@@ -80,7 +80,7 @@
         </li>
         <li>
           <nuxt-link
-            to="/connected-apps"
+            to="/apps"
             active-class="border-[#fb3667] bg-gradient-to-r from-[#fb366756]"
             class="sidenav group flex items-center rounded-lg border-l-4 border-transparent px-10 py-3 text-white hover:border-[#fb3667] hover:bg-gradient-to-r hover:from-[#fb366756]"
           >
