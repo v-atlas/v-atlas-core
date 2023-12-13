@@ -37,6 +37,7 @@
     "normalize.css": "^8.0.1",
     "pinia": "^2.1.7",
     "qrcode": "^1.5.3",
+    "tailwind-merge": "^2.1.0",
     "vee-validate": "^4.11.8",
     "zod": "^3.22.4"
   }

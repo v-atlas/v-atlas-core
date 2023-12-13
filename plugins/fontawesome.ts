@@ -11,6 +11,9 @@ import {
   faCheckCircle,
   faDownload,
   faPlus,
+  faHome,
+  faEye,
+  faPlay,
 } from "@fortawesome/free-solid-svg-icons";
 
 import {
@@ -36,7 +39,10 @@ library.add(
     faInstagram,
     faLinkedin,
     faDownload,
-  ]
+    faHome,
+    faEye,
+    faPlay,
+  ],
 );
 
 // This is important, we are going to let Nuxt worry about the CSS
