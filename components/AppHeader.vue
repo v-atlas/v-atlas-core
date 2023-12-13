@@ -1,6 +1,6 @@
 <template>
   <header>
-    <nav class="bg-primary shadow-black-500 fixed top-0 z-50 w-full">
+    <nav class="bg-primary fixed top-0 z-50 w-full">
       <div class="px-3 py-5 sm:px-8">
         <div class="flex items-center justify-between">
           <div
@@ -51,7 +51,7 @@
               <div>
                 <button
                   type="button"
-                  class="flex items-start gap-[14px] rounded-full bg-gray-800 text-sm"
+                  class="flex items-start gap-[14px] rounded-full bg-primary text-sm"
                   aria-expanded="false"
                   data-dropdown-toggle="dropdown-user"
                 >
@@ -104,14 +104,7 @@
                       >Settings</a
                     >
                   </li>
-                  <li>
-                    <a
-                      href="#"
-                      class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-600 hover:text-white"
-                      role="menuitem"
-                      >Earnings</a
-                    >
-                  </li>
+                 
                   <li>
                     <a
                       href="#"
