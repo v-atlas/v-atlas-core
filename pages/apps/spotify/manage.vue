@@ -17,6 +17,7 @@
 <script lang="ts" setup>
 import { storeToRefs } from "pinia";
 import { useAuthStore } from "~/stores/auth";
+import { useSpotifyStore } from "~/stores/spotify";
 
 useHead({
   title: "Spotify | V-Atlas",
@@ -37,7 +38,17 @@ useSeoMeta({
 });
 
 const authStore = useAuthStore();
+const spotifyStore = useSpotifyStore();
 const { isSpotifyConnected } = storeToRefs(authStore);
+
+async function syncSpotify() {
+  await spotifyStore.enableProtocol();
+  await spotifyStore.fetchPlaylistsFromAtlas();
+}
+
+onMounted(() => {
+  syncSpotify();
+});
 </script>
 
 <style scoped></style>
