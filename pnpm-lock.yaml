@@ -3793,14 +3793,9 @@ packages:
     resolution: {integrity: sha512-I88TYZWc9XiYHRQ4/3c5rjjfgkjhLyW2luGIheGERbNQ6OY7yTybanSpDXZa8y7VUP9YmDcYa+eyq4ca7iLqWA==}
     dev: true
 
-  /ecdsa-sig-formatter@1.0.11:
-    resolution: {integrity: sha512-nagl3RYrbNv6kQkeJIpt6NJZy8twLB/2vtz6yN9Z4vRKHN4/QZJIEbqohALSgwKdnksuY3k5Addp5lg8sVoVcQ==}
-    dependencies:
-      safe-buffer: 5.2.1
-    dev: false
-
-  /eciesjs@0.4.0:
-    resolution: {integrity: sha512-z4dEeaH16xxYVgtxJ8YVwpifH4Keg4gyp5F451mnDNwbAN3MgL5jcoEQGpqJrapv/zW8KwDnXG21Dw5B0hqvmw==}
+  /eciesjs@0.4.5:
+    resolution: {integrity: sha512-2zSRIygO48LpdS95Rwt9ryIkJNO37IdbkjRsnYyAn7gx7e4WPBNimnk6jGNdx2QQYr/VJRPnSVdwQpO5bycYZw==}
+    engines: {node: '>=16.0.0'}
     dependencies:
       '@noble/ciphers': 0.3.0
       '@noble/curves': 1.2.0
