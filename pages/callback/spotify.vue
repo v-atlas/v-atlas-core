@@ -29,6 +29,24 @@
 import { z } from "zod";
 import { useAuthStore } from "~/stores/auth";
 
+useHead({
+  title: "Spotify Integration | V-Atlas",
+  meta: [
+    {
+      key: "keywords",
+      content:
+        "V-Atlas, digital identity, Web5, virtual storage, data management, user privacy, decentralized platforms, identity security.",
+    },
+  ],
+});
+
+useSeoMeta({
+  title:
+    "Spotify Integration | V-Atlas: Revolutionizing Digital Identity and Data Management",
+  description:
+    "Discover V-Atlas, a visionary platform using Web5 technology to empower users with secure, flexible virtual storage and identity management. Control your digital presence like never before.",
+});
+
 definePageMeta({
   middleware: "spotify-connect",
 });
@@ -58,7 +76,7 @@ watch(
     if (data?.value?.success) {
       authStore.setSpotifyAccessToken(data.value.token);
 
-      navigateTo("/");
+      navigateTo("/apps/spotify/manage");
     }
   },
 );

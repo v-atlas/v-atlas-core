@@ -1,14 +1,13 @@
 <template>
+  <AppHeader />
   <AppSidebar />
-  
-  <div class="h-full min-h-screen px-8 sm:ml-64 mt-24">
+
+  <div class="mt-24 px-8 sm:ml-64">
     <slot />
   </div>
-  <AppFooter />
+  <!-- <AppFooter /> -->
 </template>
 
-<script setup>
-
-</script>
+<script setup></script>
 
 <style scoped></style>

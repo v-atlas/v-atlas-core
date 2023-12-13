@@ -1,12 +1,13 @@
 <template>
   <div class="flex flex-col">
     <div
-      class="flex flex-col gap-4 rounded-md bg-emerald-500/30 p-4 transition-colors duration-200 hover:bg-emerald-500/50 md:p-2"
+      class="flex flex-col gap-4 rounded-md border-2 bg-emerald-500/20 p-4 transition-colors duration-200 hover:border-emerald-500/50 md:p-2 xl:flex-row"
     >
     <div class="flex flex-col xl:flex-row gap-6">
 
 
       <img
+        loading="lazy"
         class="max-h-40 max-w-fit rounded-md border-2 border-white md:mx-0"
         v-if="playlist.images.length > 0"
         :src="playlist.images[0].url"
@@ -28,40 +29,38 @@
 
       <div class="ml-auto flex flex-col justify-end gap-2 align-bottom md:flex-col"
       >
-        <p class="text-right">{{ playlist.tracks.total }} Tracks</p>
-        <div class="flex flex-row gap-2 max-[500px]:flex-col sm:flex-col xl:flex-row">
+        <spotify-tracks-item :playlist="playlist" />
+        <div class="flex flex-row gap-2 max-[480px]:flex-col md:flex-col">
           <a
-            class="rounded-lg bg-emerald-500/50 px-4 py-3 font-bold no-underline transition-colors duration-200 hover:bg-emerald-300/50"
+            class="flex flex-row justify-between gap-5 rounded-lg bg-emerald-500/50 px-4 py-3 align-middle no-underline transition-colors duration-200 hover:bg-emerald-800/90"
             :href="playlist.external_urls.spotify"
             target="blank"
           >
-            View on Spotify
-            <font-awesome-icon icon="fa-brands fa-spotify" />
+            <span class="font-bold"> View on Spotify </span>
+            <font-awesome-icon icon="fa-brands fa-spotify" class="my-auto" />
           </a>
 
           <button
-            class="rounded-lg bg-broom-500 px-4 py-3 font-bold text-black transition-colors duration-200 hover:bg-broom-300"
+            class="flex flex-row justify-between gap-5 rounded-lg bg-broom-500 px-4 py-3 align-middle text-black transition-colors duration-200 hover:bg-broom-300"
           >
-            Add to My Atlas
-            <font-awesome-icon icon="fa-plus" />
+            <span class="font-bold"> Add to My Atlas </span>
+            <font-awesome-icon icon="fa-plus" class="my-auto" />
           </button>
         </div>
-      </div>
-    </div>
-    <div class="bottom">
-      <div class="tracks">
-        <spotify-tracks-item :tracks="playlist.tracks" />
       </div>
     </div>
   </div>
 </template>
 
 <script lang="ts" setup>
+import { useSpotifyStore } from "~/stores/spotify";
 import { type SpotifyPlaylistItem } from "~/types";
 
 defineProps<{
   playlist: SpotifyPlaylistItem;
 }>();
+
+const spotifyStore = useSpotifyStore();
 </script>
 
 <style scoped></style>
