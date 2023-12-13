@@ -1,14 +1,19 @@
 import { defineStore } from "pinia";
 import { useWeb5Store, RecordTypes } from "~/stores/web5";
 import { type SpotifyPlaylistItem } from "~/types"
+import spotifyProtocolDefinition from "~/assets/protocols/spotify.json"
 
 
 export const useSpotifyStore = defineStore("spotify", () => {
   const web5Store = useWeb5Store();
 
+  async function enableProtocol() {
+    await web5Store.enableProtocol(spotifyProtocolDefinition);
+  }
+
   async function addPlaylistToAtlas(playlist: SpotifyPlaylistItem) {
     await web5Store.createRecord({
-      data: JSON.stringify(playlist),
+      data: playlist,
       type: RecordTypes.Json,
       schema: "playlist"
     })
@@ -22,11 +27,14 @@ export const useSpotifyStore = defineStore("spotify", () => {
     }
   }
 
-  async function fetchPlaylistsFromAtlas() { }
+  async function fetchPlaylistsFromAtlas() {
+    return await web5Store.fetchRecords(RecordTypes.Json)
+  }
 
   async function sharePlaylist() { }
 
   return {
+    enableProtocol,
     addPlaylistToAtlas,
     addAllPlaylistsToAtlas,
     fetchPlaylistsFromAtlas,
