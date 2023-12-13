@@ -32,7 +32,7 @@
     "@fortawesome/vue-fontawesome": "^3.0.5",
     "@vee-validate/zod": "^4.11.8",
     "@vueuse/core": "^10.6.1",
-    "@web5/api": "^0.8.2",
+    "@web5/api": "^0.8.3",
     "flowbite": "^2.2.0",
     "normalize.css": "^8.0.1",
     "pinia": "^2.1.7",
