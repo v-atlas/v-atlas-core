@@ -24,13 +24,18 @@
             <transaction-history-item />
           </div>
         </div>
-        <div class="connected-app">connected</div>
+        <div class="connected-app">
+          <div class="grid gap-x-6 gap-y-8 md:grid-cols-2">
+            <connected-app-card v-for="app in apps" :app="app" />
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </template>
 
-<script setup>
+<script lang="ts" setup>
+import { type ConnectedApp, SupportedApps } from "~/types";
 useHead({
   title: "V-Atlas",
   meta: [
@@ -46,6 +51,23 @@ useSeoMeta({
   title: "V-Atlas: Revolutionizing Digital Identity and Data Management",
   description:
     "Discover V-Atlas, a visionary platform using Web5 technology to empower users with secure, flexible virtual storage and identity management. Control your digital presence like never before.",
+});
+
+const apps = computed<ConnectedApp[]>(() => {
+  const spotifyApp: ConnectedApp = {
+    type: SupportedApps.Spotify,
+    description: "Spotify is a widely popular digital music streaming service.",
+    link: "/apps/spotify/manage",
+  };
+
+  const googleDriveApp: ConnectedApp = {
+    type: SupportedApps.GoogleDrive,
+    description:
+      "Google Drive can provide encrypted and secure access to your files.",
+    link: "/apps/google-drive/manage",
+  };
+
+  return [spotifyApp, googleDriveApp];
 });
 </script>
 

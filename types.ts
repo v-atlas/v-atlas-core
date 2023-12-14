@@ -97,6 +97,12 @@ export type VideoThumbnail = {
   url: null;
 };
 
+export type keyInformation = {
+  title: string
+  value: string
+  icon: string
+  shadow: string
+  }
 export const SupportedApps = {
   Spotify: "Spotify",
   GoogleDrive: "Google Drive",

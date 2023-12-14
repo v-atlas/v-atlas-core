@@ -8,7 +8,7 @@
           class="absolute -left-20 -top-20 h-32 w-32 rounded-[64px] bg-[#1DD35E99] blur-[84px]"
         ></div>
         <div class="icon-container">
-          <div class="icon"></div>
+          <img src="~/assets/images/spotify.svg" alt="icon" />
         </div>
         <div>
           <h3 class="relative z-10 text-sm text-subdued">
@@ -19,23 +19,25 @@
           </p>
         </div>
       </div>
-      <div v-for="(item, index) in keyInformationData" :key="index">
+      <div
+        class="relative flex gap-[17px] overflow-hidden rounded-[10px] bg-primary px-[21px] py-[26px]"
+      >
         <div
-          class="relative flex gap-[17px] overflow-hidden rounded-[10px] bg-primary px-[21px] py-[26px]"
-        >
-          <div
-            class="absolute -left-20 -top-20 h-32 w-32 rounded-[64px] blur-[84px]"
-            :style="{ backgroundColor: item.shadow }"
-          ></div>
-          <div class="icon-container">
-            <div class="icon"></div>
-          </div>
-          <div>
-            <h3 class="relative z-10 text-sm text-subdued">{{ item.title }}</h3>
-            <p class="relative z-10 text-2xl text-white">{{ item.value }}</p>
-          </div>
+          class="absolute -left-20 -top-20 h-32 w-32 rounded-[64px] bg-[#FF5B3F99] blur-[84px]"
+        ></div>
+        <div class="icon-container">
+          <img src="~/assets/images/drive.svg" alt="icon" />
+        </div>
+        <div>
+          <h3 class="relative z-10 text-sm text-subdued">
+            Total File downloaded
+          </h3>
+          <p class="relative z-10 text-2xl text-white">
+            0
+          </p>
         </div>
       </div>
+     
     </div>
   </div>
 </template>
@@ -72,8 +74,4 @@ onMounted(() => {
   background-repeat: no-repeat;
 }
 
-/* You can adjust the background image path based on your project structure */
-.icon:nth-child(1) {
-  background-image: url("~/assets/images/spotify.svg");
-}
 </style>
