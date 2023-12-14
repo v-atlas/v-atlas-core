@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-primary p-[14px]">
+  <div class="relative bg-primary p-[14px]">
     <div class="relative mb-[14px]">
       <img
         loading="lazy"
@@ -24,15 +24,60 @@
         </p>
       </div>
     </div>
-    <div class="mb-[14px] flex justify-between">
-      <div>
+    <div class="relative mb-[14px] flex justify-between">
+      <div class="w-2/3">
         <h4 class="line-clamp-1">{{ playlist.name }}</h4>
         <p class="line-clamp-1 text-sm text-subdued">
           {{ playlist.description || playlist.name }}
         </p>
       </div>
-      <div class="icon">
-        <img src="~/assets/images/menu.svg" alt="" />
+      <div class="">
+        <button
+          type="button"
+          aria-expanded="false"
+          data-dropdown-toggle="dropdown-playlist"
+          class="icon"
+          @click="toggleDropdown"
+        >
+          <span class="sr-only">Open playlist menu</span>
+          <img src="~/assets/images/menu.svg" alt="" />
+        </button>
+      </div>
+      <div
+        v-if="isDropdownVisible"
+        class="absolute -bottom-28 right-0 z-50 w-full list-none divide-y divide-gray-600 rounded border border-[#23283D] bg-primary p-2 text-center text-base shadow"
+        id="dropdown-playlist"
+      >
+        <ul class="" role="none">
+          <li class="border-b border-[#23283D]">
+            <nuxt-link
+              to="/"
+              class="flex items-center justify-center gap-1 px-4 py-3 text-sm text-gray-300 hover:bg-gray-600 hover:text-white"
+              role="menuitem"
+            >
+              <img
+                class="h-6 w-6"
+                src="~/assets/images/add.svg"
+                alt="add icon"
+              />
+              <p>Add to my Atlas</p>
+            </nuxt-link>
+          </li>
+          <li>
+            <nuxt-link
+              to="/"
+              class="flex items-center justify-center gap-1 px-4 py-3 text-sm text-gray-300 hover:bg-gray-600 hover:text-white"
+              role="menuitem"
+            >
+              <img
+                class="h-6 w-6"
+                src="~/assets/images/remove.svg"
+                alt="remove icon"
+              />
+              Remove from my Atlas
+            </nuxt-link>
+          </li>
+        </ul>
       </div>
     </div>
 
@@ -60,6 +105,12 @@ import { type SpotifyPlaylistItem } from "~/types";
 const props = defineProps<{
   playlist: SpotifyPlaylistItem;
 }>();
+
+const isDropdownVisible = ref(false);
+
+function toggleDropdown() {
+  isDropdownVisible.value = !isDropdownVisible.value;
+}
 
 function handlePreviewPlaylist() {
   navigateTo({

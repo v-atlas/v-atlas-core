@@ -37,9 +37,9 @@
         </button>
       </template>
 
-      <span class="rounded-md bg-red-500 p-2 text-sm font-bold" v-else>
-        Spotify is unavailable at this time
-        <font-awesome-icon icon="fa-brands fa-spotify" />
+      <span class="flex gap-[17px] rounded-md bg-red-500 py-3 px-[21px] items-center " v-else>
+        <p>Spotify is unavailable at this time</p>
+        <font-awesome-icon class="h-6 w-6" icon="fa-brands fa-spotify" />
       </span>
     </div>
   </div>
