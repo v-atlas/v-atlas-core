@@ -9,7 +9,8 @@
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
     "init:tailwind": "pnpx tailwindcss init -p",
-    "sync-env": "sync-dotenv"
+    "sync-env": "sync-dotenv",
+    "type-gen": "ts-json-schema-generator"
   },
   "devDependencies": {
     "@nuxt/devtools": "latest",
@@ -23,6 +24,7 @@
     "prettier-plugin-tailwindcss": "^0.5.9",
     "sass": "^1.69.5",
     "sync-dotenv": "^2.7.0",
+    "ts-json-schema-generator": "^1.5.0",
     "vue": "^3.3.8",
     "vue-router": "^4.2.5"
   },

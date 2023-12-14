@@ -50,6 +50,7 @@ export default defineNuxtConfig({
     transpile: ["@fortawesome/vue-fontawesome"],
   },
   runtimeConfig: {
+    frontendUrl: "",
     // Spotify Configuration
     spotifyClientId: "",
     spotifyClientSecret: "",

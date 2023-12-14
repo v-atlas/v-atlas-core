@@ -40,7 +40,7 @@
     <div
       class="fixed bottom-0 flex items-center gap-24 left-0 w-full border-t border-gray-800 bg-[#0C0E18] py-5 pl-20 sm:ml-64"
     >
-      <div class="flex items-center gap-[10px]">
+      <!-- <div class="flex items-center gap-[10px]">
         <div class="h-[76px] w-[67px] rounded-[10px]">
           <img
             src="~/assets/images/dropbox.svg"
@@ -58,7 +58,7 @@
       </div>
       <div>
         PLAYER
-      </div>
+      </div> -->
     </div>
   </div>
 </template>
