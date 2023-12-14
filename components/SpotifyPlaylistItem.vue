@@ -3,26 +3,26 @@
     <div class="relative mb-[14px]">
       <img
         loading="lazy"
-        class="mx-auto rounded-[2px]"
+        class="mx-auto"
         v-if="playlist.images.length > 0"
         :src="playlist.images[0].url"
         alt="Playlist Cover"
       />
       <img
         v-else
-        class="mx-auto rounded-[2px]"
+        class="mx-auto"
         src="~/assets/images/spotify.png"
         alt="Fallback Image"
       />
 
-      <div
+      <!-- <div
         class="absolute bottom-0 left-0 right-0 mx-auto w-[80%] rounded-t-[11.3px] border-x border-t border-[#ffffff4e] bg-white/30 p-4 backdrop-blur-sm"
       >
         <h4 class="line-clamp-1">{{ playlist.name }}</h4>
         <p class="line-clamp-1 text-xs text-[#FFFFFF9E]">
           {{ playlist.description || playlist.name }}
         </p>
-      </div>
+      </div> -->
     </div>
     <div class="relative mb-[14px] flex justify-between">
       <div class="w-2/3">
