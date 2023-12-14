@@ -7,7 +7,7 @@
         @click="handleDownloadPlaylist"
       >
         <img src="~/assets/images/sync.svg" alt="sync icon" />
-        Sync Playlists
+        Sync Spotify Playlists
 
         <font-awesome-icon
           v-if="playlistFetchStatus === 'pending'"
