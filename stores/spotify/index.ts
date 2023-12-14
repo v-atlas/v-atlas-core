@@ -2,6 +2,7 @@ import { defineStore } from "pinia";
 import { useWeb5Store, RecordTypes } from "~/stores/web5";
 import { type SpotifyPlaylistItem } from "~/types"
 import spotifyProtocolDefinition from "~/assets/protocols/spotify.json"
+import { SpotifyPlaylistItemSchema } from "./schemas"
 
 
 export const useSpotifyStore = defineStore("spotify", () => {
@@ -23,12 +24,23 @@ export const useSpotifyStore = defineStore("spotify", () => {
   async function addAllPlaylistsToAtlas(playlists: SpotifyPlaylistItem[]) {
     for (const playlist of playlists) {
       await addPlaylistToAtlas(playlist);
-      break
     }
   }
 
-  async function fetchPlaylistsFromAtlas() {
-    return await web5Store.fetchRecords(RecordTypes.Json)
+  async function fetchPlaylistsFromAtlas(): Promise<SpotifyPlaylistItem[]> {
+    const playlists = await web5Store.fetchRecords<SpotifyPlaylistItem>(RecordTypes.Json)
+
+    const validatedPlaylists: SpotifyPlaylistItem[] = playlists.map((item) => {
+      try {
+        const playlist = SpotifyPlaylistItemSchema.parse(item)
+        return playlist
+      } catch (_) {
+        return null
+      }
+    }).filter(nullishFilter)
+
+
+    return validatedPlaylists
   }
 
   async function sharePlaylist() { }
