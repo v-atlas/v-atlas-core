@@ -3,11 +3,11 @@
     <div
       class="mb-[50px] flex items-center gap-10 rounded-[10px] bg-primary p-[14px]"
     >
-      <div class="relative rounded-[10px] bg-gray-800">
+      <div class="relative ">
         <img
           src="~/assets/images/youtube.svg"
           alt="album image"
-          class="h-[150px] w-[150px] rounded-[10px] lg:h-[300px] lg:w-[300px]"
+          class="h-[150px] w-[150px] lg:h-[300px] lg:w-[300px]"
         />
         <div
           class="details-box absolute bottom-0 left-0 right-0 mx-auto w-[80%] rounded-t-[11.3px] border-x border-t border-[#ffffff4e] p-4"

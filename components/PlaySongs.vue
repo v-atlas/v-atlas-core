@@ -11,10 +11,10 @@
             <div>
               {{ index + 1 }}
             </div>
-            <div class="h-[76px] w-[67px] rounded-[10px]">
+            <div class="h-[76px] w-[67px]">
               <img
                 :src="item.track.album.images[0].url"
-                class="h-[76px] w-[67px] rounded-[10px] object-cover"
+                class="h-[76px] w-[67px] object-cover"
                 alt="image"
               />
             </div>

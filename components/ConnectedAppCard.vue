@@ -7,19 +7,19 @@
       <div class="block">
         <div v-if="isConnected" class="flex flex-row gap-2">
           <div
-            class="flex h-[29px] items-center justify-center gap-x-1 rounded-md border border-emerald bg-emerald-950 pb-[2px] pl-2 pr-3"
+            class="flex h-[29px] items-center justify-center gap-x-1 rounded-md border border-[#74DFA0] bg-[#1F2C30]  pl-2 pr-3"
           >
-            <div class="h-2 w-2 rounded-full bg-emerald"></div>
-            <p class="text-[10px] leading-none text-emerald">Connected</p>
+            <div class="h-2 w-2 rounded-full bg-[#74DFA0]"></div>
+            <p class="text-[10px] leading-none text-[#74DFA0]">Connected</p>
           </div>
         </div>
 
         <div
           v-else
-          class="flex h-[29px] items-center justify-center gap-x-1 rounded-md border border-broom bg-broom-950 pb-0.5 pl-2 pr-3"
+          class="flex h-[29px] items-center justify-center gap-x-1 rounded-md border border-[#DFD474] bg-[#2E2C19] pl-2 pr-3"
         >
-          <div class="h-2 w-2 rounded-full bg-broom"></div>
-          <p class="text-[10px] leading-none text-broom">Not connected</p>
+          <div class="h-2 w-2 rounded-full bg-[#DFD474]"></div>
+          <p class="text-[10px] leading-none text-[#DFD474]">Not connected</p>
         </div>
       </div>
     </div>
@@ -44,16 +44,16 @@
         <div v-if="isConnected" class="flex flex-row gap-2">
           <NuxtLink
             :to="app.link"
-            class="mt-auto flex w-10/12 justify-center rounded-md bg-athens-gray-800 px-7 py-2.5 text-center text-white/90 transition-colors duration-200 hover:bg-athens-gray-950"
+            class="mt-auto flex w-10/12 justify-center rounded-md border border-gray-800 bg-[linear-gradient(180deg,rgb(27.34,31.82,49.71)0%,rgba(27.34,31.82,49.71,0.59)100%)] px-7 py-[10px] text-[#D1D1D5]"
           >
             Manage
           </NuxtLink>
 
           <button
             @click="handleAppDisconnect"
-            class="mt-auto h-11 w-2/12 rounded-md bg-red-800/50 text-white/90 transition-colors duration-200 hover:bg-red-950/50"
+            class="mt-auto flex justify-center items-center h-11 w-2/12 rounded-md bg-[#291A2B] text-white/90 transition-colors duration-200 hover:bg-red-950/50"
           >
-            <font-awesome-icon icon="fa-solid fa-times" />
+            <img class="w-6 h-6" src="~/assets/images/disconnect.svg" alt="">
           </button>
         </div>
 
@@ -61,14 +61,14 @@
           <NuxtLink
             v-if="authorizationUrl"
             :to="authorizationUrl"
-            class="flex w-full justify-center rounded-md bg-emerald-600 px-7 py-2.5 text-center text-white/90 transition-colors duration-200 hover:bg-emerald-800"
+            class="flex w-full justify-center rounded-md bg-gradient-to-r from-[rgba(67,207,108,0.83)] px-7 py-2.5 text-center text-white/90 transition-colors duration-200 hover:bg-emerald-800"
           >
             Connect
           </NuxtLink>
 
           <span
             v-else
-            class="flex w-full justify-center rounded-md bg-red-800 px-7 py-2.5 text-center text-white/90"
+            class="flex w-full justify-center rounded-md bg-[#291A2B] px-7 py-2.5 text-center text-white/90"
           >
             Not Available
           </span>
