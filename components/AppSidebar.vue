@@ -83,7 +83,7 @@
           <nuxt-link
             to="/apps"
             active-class="!border-atlas-red border-atlas-red bg-gradient-to-r from-[#fb366756] !text-atlas-red"
-            class="sidenav group flex items-center rounded-lg border-l-4 border-transparent px-10 py-3 text-white hover:border-atlas-red hover:bg-gradient-to-r hover:from-[#fb366756]"
+            class="sidenav group flex items-center rounded-lg border-l-4 border-transparent px-10 py-3 text-[#D0D1D3] hover:border-atlas-red hover:bg-gradient-to-r hover:from-[#fb366756]"
           >
             <svg
               class="h-5 w-5 text-[#D0D1D3] transition duration-75 group-hover:text-atlas-red"
