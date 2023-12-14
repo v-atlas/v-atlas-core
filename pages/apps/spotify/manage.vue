@@ -5,7 +5,10 @@
         <link-spotify />
       </div>
 
-      <div class="p-[10px]">
+      <div class="m-1 flex flex-col gap-10">
+        <div class="atlas-playlists">
+          <atlas-spotify-playlist-manager />
+        </div>
         <div class="spotify-actions" v-if="isSpotifyConnected">
           <spotify-playlist-manager />
         </div>
@@ -17,7 +20,6 @@
 <script lang="ts" setup>
 import { storeToRefs } from "pinia";
 import { useAuthStore } from "~/stores/auth";
-import { useSpotifyStore } from "~/stores/spotify";
 
 useHead({
   title: "Spotify | V-Atlas",
@@ -38,17 +40,7 @@ useSeoMeta({
 });
 
 const authStore = useAuthStore();
-const spotifyStore = useSpotifyStore();
 const { isSpotifyConnected } = storeToRefs(authStore);
-
-async function syncSpotify() {
-  await spotifyStore.enableProtocol();
-  await spotifyStore.fetchPlaylistsFromAtlas();
-}
-
-onMounted(() => {
-  syncSpotify();
-});
 </script>
 
 <style scoped></style>
