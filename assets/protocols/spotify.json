@@ -1,0 +1,26 @@
+{
+  "protocol": "https://my.vatlas.dev/protocol",
+  "published": true,
+  "types": {
+    "playlist": {
+      "schema": "https://my.vatlas.dev/protocol/playlist",
+      "dataFormats": ["application/json"]
+    }
+  },
+  "structure": {
+    "playlist": {
+      "$actions": [
+        {
+          "who": "author",
+          "of": "playlist",
+          "can": "read"
+        },
+        {
+          "who": "author",
+          "of": "playlist",
+          "can": "write"
+        }
+      ]
+    }
+  }
+}

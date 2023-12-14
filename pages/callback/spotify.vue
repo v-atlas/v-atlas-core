@@ -26,6 +26,7 @@
 <script lang="ts" setup>
 import { z } from "zod";
 import { useAuthStore } from "~/stores/auth";
+import { useSpotifyStore } from "~/stores/spotify";
 
 useHead({
   title: "Spotify Integration | V-Atlas",
@@ -51,6 +52,7 @@ definePageMeta({
 
 const route = useRoute();
 const authStore = useAuthStore();
+const spotifyStore = useSpotifyStore();
 
 const callbackSchema = z.object({
   code: z.string(),
@@ -68,13 +70,17 @@ const { pending, data } = await useLazyFetch(
   },
 );
 
+async function setAndNavigate(token: string) {
+  authStore.setSpotifyAccessToken(token);
+  await spotifyStore.enableProtocol();
+  navigateTo("/apps");
+}
+
 watch(
   () => pending.value,
-  () => {
+  async () => {
     if (data?.value?.success) {
-      authStore.setSpotifyAccessToken(data.value.token);
-
-      navigateTo("/apps");
+      await setAndNavigate(data.value.token);
     }
   },
 );

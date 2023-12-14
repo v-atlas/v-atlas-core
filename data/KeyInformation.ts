@@ -1,10 +1,5 @@
 export const keyInformationData = [
-  {
-    title: 'Total Playlist Imported',
-    value: '234',
-    icon: "spotify.svg",
-    shadow: '#1DD35E99',
-  },
+
   {
     title: 'Total File downloaded',
     value: '64',

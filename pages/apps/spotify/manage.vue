@@ -5,7 +5,10 @@
         <link-spotify />
       </div>
 
-      <div class="p-[10px]">
+      <div class="m-1 flex flex-col gap-10">
+        <div class="atlas-playlists">
+          <atlas-spotify-playlist-manager />
+        </div>
         <div class="spotify-actions" v-if="isSpotifyConnected">
           <spotify-playlist-manager />
         </div>
