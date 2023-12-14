@@ -25,7 +25,7 @@
     </div>
     <div class="mt-3 flex h-fit flex-col gap-2">
       <h3 class="text-white">{{ app.type }}</h3>
-      <p class="mb-4 w-11/12 text-sm text-athens-gray-600">
+      <p class="mb-4 w-11/12 text-sm text-athens-gray-600 line-clamp-2">
         {{ app.description }}
       </p>
 
