@@ -61,7 +61,7 @@
           <NuxtLink
             v-if="authorizationUrl"
             :to="authorizationUrl"
-            class="flex w-full justify-center rounded-md bg-emerald-500 px-7 py-2.5 text-center text-white/90 transition-colors duration-200 hover:bg-emerald-800"
+            class="flex w-full justify-center rounded-md bg-gradient-to-r from-[rgba(67,207,108,0.83)] px-7 py-2.5 text-center text-white/90 transition-colors duration-200 hover:bg-emerald-800"
           >
             Connect
           </NuxtLink>
