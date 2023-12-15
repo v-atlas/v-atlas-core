@@ -10,14 +10,14 @@
         <link-drive />
       </div>
 
-      <!-- <div class="m-1 flex flex-col gap-10">
-        <div class="atlas-playlists">
+      <div class="m-1 flex flex-col gap-10">
+        <!-- <div class="atlas-playlists">
           <atlas-spotify-playlist-manager />
+        </div> -->
+        <div class="spotify-actions" v-if="isGoogleConnected">
+          <google-drive-manager />
         </div>
-        <div class="spotify-actions" v-if="isSpotifyConnected">
-          <spotify-playlist-manager />
-        </div>
-      </div> -->
+      </div>
     </div>
   </div>
 </template>
@@ -27,7 +27,7 @@ import { storeToRefs } from "pinia";
 import { useAuthStore } from "~/stores/auth";
 
 useHead({
-  title: "Spotify | V-Atlas",
+  title: "Google Drive | V-Atlas",
   meta: [
     {
       key: "keywords",
@@ -39,13 +39,13 @@ useHead({
 
 useSeoMeta({
   title:
-    "Spotify | V-Atlas: Revolutionizing Digital Identity and Data Management",
+    "Google Drive | V-Atlas: Revolutionizing Digital Identity and Data Management",
   description:
     "Discover V-Atlas, a visionary platform using Web5 technology to empower users with secure, flexible virtual storage and identity management. Control your digital presence like never before.",
 });
 
 const authStore = useAuthStore();
-const { isSpotifyConnected } = storeToRefs(authStore);
+const { isGoogleConnected } = storeToRefs(authStore);
 </script>
 
 <style scoped></style>

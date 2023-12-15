@@ -1,16 +1,9 @@
 <template>
   <div>
     <div class="mt-4 mb-6 flex gap-[10px]">
-      <div class="p-[7px] rounded-[100px] bg-[#1b1f31]">  <img
-            src="~/assets/images/previous.svg"
-            alt="previous icon"
-          /></div>
-          <div class="p-[7px] rounded-[100px] bg-[#1b1f31]">
-            <img
-            src="~/assets/images/next.svg"
-            alt="next icon"
-          />
-          </div>
+      <nuxt-link to="/apps" class="p-[7px] rounded-[100px] bg-[#1b1f31]">
+        <img src="~/assets/images/previous.svg" alt="previous icon" />
+      </nuxt-link>
     </div>
     <div class="flex flex-col">
       <div class="flex w-max flex-col gap-[20px] px-[5px] py-[10px]">
