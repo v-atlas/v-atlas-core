@@ -38,7 +38,7 @@ export default defineEventHandler(async (event) => {
       return {
         success: false,
         message: error.message,
-        files: null
+        files: null,
       };
     }
     return {

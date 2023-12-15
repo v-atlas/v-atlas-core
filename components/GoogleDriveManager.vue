@@ -11,15 +11,9 @@
             </button>
         </div>
 
-        {{ googleDriveAccessToken }}
         <div v-if="filesAvailable">
-
+            <!-- Google file component -->
             {{ JSON.stringify(filesData) }}
-            <!-- <div
-        class="grid grid-cols-1 gap-10 md:grid-cols-2 md:gap-5 lg:grid-cols-3 2xl:grid-cols-4"
-      >
-        
-      </div> -->
         </div>
     </div>
 </template>
@@ -28,10 +22,8 @@
 <script lang="ts" setup>
 import { storeToRefs } from "pinia";
 import { useAuthStore } from "~/stores/auth";
-import { useSpotifyStore } from "~/stores/spotify";
 
 const authStore = useAuthStore();
-// const spotifyStore = useSpotifyStore();
 
 const { googleDriveAccessToken } = storeToRefs(authStore);
 
