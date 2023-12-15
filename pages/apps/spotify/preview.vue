@@ -1,5 +1,17 @@
 <template>
   <div>
+    <div class="mt-4 mb-6 flex gap-[10px]">
+      <div class="p-[7px] rounded-[100px] bg-[#1b1f31]">  <img
+            src="~/assets/images/previous.svg"
+            alt="previous icon"
+          /></div>
+          <div class="p-[7px] rounded-[100px] bg-[#1b1f31]">
+            <img
+            src="~/assets/images/next.svg"
+            alt="next icon"
+          />
+          </div>
+    </div>
     <div
       class="mb-[50px] flex items-center gap-10 rounded-[10px] bg-primary p-[14px]"
     >

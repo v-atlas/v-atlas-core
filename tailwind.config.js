@@ -88,6 +88,7 @@ export default {
       },
       backgroundImage: {
         'sidenav-gradient': 'linear-gradient(180deg, rgba(251, 54, 103, 0.14) 0%, rgba(251, 54, 103, 0.04) 65.29%)',
+        'frame': "url('~/assets/images/frame.png')"
       },
     },
   },
