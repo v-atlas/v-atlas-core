@@ -21,14 +21,6 @@
           alt="album image"
           class="h-[150px] w-[150px] lg:h-[300px] lg:w-[300px]"
         />
-        <div
-          class="details-box absolute bottom-0 left-0 right-0 mx-auto w-[80%] rounded-t-[11.3px] border-x border-t border-[#ffffff4e] p-4"
-        >
-          <h4 class="line-clamp-1">Top songs 2023</h4>
-          <p class="line-clamp-1 text-xs text-[#FFFFFF9E]">
-            Hip-Hop || 32 Tracks
-          </p>
-        </div>
       </div>
       <div class="space-y-2">
         <h2 class="line-clamp-2 text-2xl lg:text-5xl">
@@ -92,9 +84,4 @@ downloadPlayload({});
 </script>
 
 <style scoped>
-.details-box {
-  -webkit-backdrop-filter: blur(22.69px) brightness(100%);
-  backdrop-filter: blur(22.69px) brightness(100%);
-  background-color: #ffffff33;
-}
 </style>

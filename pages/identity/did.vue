@@ -24,17 +24,21 @@
       />
       <p class="relative text-xs leading-8 text-subdued">DID</p>
       <div
-        class="mb-[49px] flex gap-[17px] rounded-[100px] bg-[#1e2235] px-5 py-[10px]"
+        class="mb-[49px] flex gap-[17px] rounded-[100px] bg-[#1e2235] px-5 w-[85%] max-w-sm py-[10px]"
       >
-        <p class="max-w-sm truncate">{{ did }}</p>
-        <button @click="handleCopyDID">
+        <p class="truncate w-[90%]">{{ did }}</p>
+        <button @click="handleCopyDID" class="cursor-pointer">
           <img src="~/assets/images/copy-white.svg" alt="copy icon" />
         </button>
       </div>
-      <canvas ref="qrCanvas" class="scale-75"></canvas>
+      <div class="flex justify-center">
+
+        <canvas ref="qrCanvas" class="max-w-[240px] max-h-[240px]"></canvas>
+      </div>
     </div>
   </div>
 </template>
+
 
 <script lang="ts" setup>
 import qrcode from "qrcode";

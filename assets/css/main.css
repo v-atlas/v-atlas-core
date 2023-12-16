@@ -23,7 +23,7 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: theme(colors.broom.500 / 50%);
+  background-color: #fb366756;
   transition: background-color 200ms ease-out;
 
   border-radius: 5px;
@@ -31,12 +31,12 @@ body {
 }
 
 ::-webkit-scrollbar-corner {
-  background-color: theme(colors.broom.500 / 50%);
+  background-color: #fb366756;
 }
 
 ::-webkit-scrollbar-thumb:hover {
   transition: background-color 200ms ease-in;
-  background-color: theme(colors.broom.500 / 50%);
+  background-color: #fb366756;
 }
 
 .bg-gradient-sidenav {
