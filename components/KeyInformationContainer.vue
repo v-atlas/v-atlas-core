@@ -43,7 +43,6 @@
 </template>
 
 <script lang="ts" setup>
-import { keyInformationData } from "~/data/KeyInformation";
 import { useSpotifyStore } from "~/stores/spotify";
 
 const spotifyStore = useSpotifyStore();
