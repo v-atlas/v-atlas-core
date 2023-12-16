@@ -44,7 +44,7 @@
                 <p>You can drag and drop images to upload</p>
 
                 <button
-                  class="relative mt-4 flex items-center gap-1 rounded-md bg-atlas-red px-2 lg:px-6 py-2"
+                  class="relative mt-4 flex items-center gap-1 rounded-md bg-atlas-red pl-2 pr-3 lg:px-6 py-2"
                 >
                   <img src="~/assets/images/plus.svg" alt="add icon" />
                   Upload File
@@ -76,9 +76,15 @@
                     src="~/assets/images/folder.svg"
                     alt="folder"
                   />
-                  <p class="truncate">
-                    {{ file.name }}
-                  </p>
+                  <div>
+                    <p class="truncate">
+                      {{ file.name }}
+                    </p>
+                    <p class="text-start text-sm text-subdued">
+                      {{ Math.round(file.size / 1000) + "kb" }}
+                    </p>
+                  </div>
+                  
                 </div>
                 <div class="absolute right-2 top-0">
                   <button
