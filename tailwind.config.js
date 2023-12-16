@@ -81,6 +81,7 @@ export default {
           950: "#4b0c20",
         },
         primary: '#141725',
+        secondary: '#0C0E18',
         "atlas-red": '#fb3667',
         "dark": '#444a5e',
         subdued: '#737994',
