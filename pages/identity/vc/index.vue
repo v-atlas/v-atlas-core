@@ -9,7 +9,6 @@
       </div>
     </div>
     <div
-      to="/identity/vc"
       class="relative mx-auto flex w-[90%] max-w-[624px] flex-col items-center overflow-hidden rounded-[10px] border-[1.4px] border-[#1DD35E] bg-primary px-5 pb-10 pt-12 text-center lg:pb-[149px]"
     >
       <div class="absolute -top-20 left-0 right-0 mx-auto w-[55%]">

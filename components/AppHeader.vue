@@ -40,7 +40,7 @@
               >
             </a>
             <input
-              class="ml-16 hidden h-10 w-full rounded-[11px] bg-[#343950] px-[14px] py-[11px] sm:block"
+              class="ml-16 hidden h-10 w-full rounded-[11px] bg-[#1e2334] border border-[#343950] px-[14px] py-[11px] sm:block"
               type="text"
               placeholder="Search..."
             />

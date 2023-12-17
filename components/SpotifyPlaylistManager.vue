@@ -29,18 +29,54 @@
         />
 
         <img src="~/assets/images/copy.svg" alt="copy icon" v-else />
-        Add to My Atlas
+        Add All to My Atlas
       </button>
     </div>
 
-    <div v-if="playlistAvailable">
+    <div v-if="playlistFetchStatus !== 'pending'">
       <div
-        class="grid grid-cols-1 gap-10 md:grid-cols-2 md:gap-5 lg:grid-cols-3 2xl:grid-cols-4"
+        class="bg-secondary sticky top-[79.2px] z-40 mb-10 flex h-24 items-center justify-between"
       >
-        <spotify-playlist-item
-          v-for="item of playlistData?.data?.items"
-          :playlist="item"
-        />
+        <h2 class="text-2xl">My Spotify Playlist</h2>
+        <div @click="togglePlaylistVisibility">
+          <div
+            v-if="playlistVisible"
+            class="flex cursor-pointer items-center gap-2 rounded-[10px] p-2 hover:bg-primary"
+          >
+            Hide
+            <img
+              class="h-8 w-8"
+              src="~/assets/images/caretdown.svg"
+              alt="caret"
+            />
+          </div>
+          <div
+            v-else
+            class="flex cursor-pointer items-center gap-2 rounded-[10px] p-2 hover:bg-primary"
+          >
+            Show
+            <img
+              class="h-8 w-8"
+              src="~/assets/images/caretup.svg"
+              alt="caret"
+            />
+          </div>
+        </div>
+      </div>
+      <div v-if="playlistVisible">
+        <div v-if="playlistAvailable">
+          <div
+            class="grid grid-cols-1 gap-10 md:grid-cols-2 md:gap-5 lg:grid-cols-3 2xl:grid-cols-4"
+          >
+            <spotify-playlist-item
+              v-for="item of playlistData?.data?.items"
+              :playlist="item"
+            />
+          </div>
+        </div>
+        <p v-else class="grid h-[30vh] place-content-center">
+          You have no synced spotify playlist
+        </p>
       </div>
     </div>
   </div>
@@ -53,6 +89,7 @@ import { useSpotifyStore } from "~/stores/spotify";
 
 const authStore = useAuthStore();
 const spotifyStore = useSpotifyStore();
+const playlistVisible = ref(true);
 
 const { spotifyAccessToken } = storeToRefs(authStore);
 
@@ -66,6 +103,10 @@ const {
   method: "POST",
   body: JSON.stringify({ token: spotifyAccessToken.value }),
 });
+
+const togglePlaylistVisibility = () => {
+  playlistVisible.value = !playlistVisible.value;
+};
 
 const handleDownloadPlaylist = () => downloadPlayload({});
 

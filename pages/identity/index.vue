@@ -1,6 +1,11 @@
 <template>
   <div class="mb-10">
-    <h2 class="mb-[25px] text-xl">Identity Management</h2>
+    <div class="flex justify-between items-center mb-[25px]">
+      <h2 class="text-xl">Identity Management</h2>
+    <nuxt-link to="/identity/vc/add" class="py-2 px-4 flex gap-1 items-center rounded-md bg-atlas-red">
+      <img src="~/assets/images/plus.svg" alt="add icon">
+      Add a verifiable credential</nuxt-link>
+    </div>
     <div class="grid gap-6 lg:grid-cols-2 xl:grid-cols-3">
       <nuxt-link
         to="/identity/did"
