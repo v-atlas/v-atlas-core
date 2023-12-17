@@ -1,7 +1,7 @@
 import { OAuth2Client, type OAuth2ClientOptions } from "google-auth-library"
 
 const SCOPES = {
-  Drive: "https://www.googleapis.com/auth/drive.file"
+  Drive: "https://www.googleapis.com/auth/drive"
 } as const;
 
 export default defineEventHandler(async (_event) => {

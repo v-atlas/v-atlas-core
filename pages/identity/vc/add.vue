@@ -1,4 +1,11 @@
 <template>
+  <div class="mb-6 mt-8 flex gap-[10px]">
+    <nuxt-link class="no-underline" to="/identity">
+      <div class="rounded-[100px] bg-[#1b1f31] p-[7px]">
+        <img src="~/assets/images/previous.svg" alt="previous icon" />
+      </div>
+    </nuxt-link>
+  </div>
   <div class="min-h-screen place-content-center">
     <div
       class="relative mx-auto flex w-[90%] max-w-[624px] flex-col items-center overflow-hidden rounded-[10px] bg-primary px-5 pb-10 pt-12 text-center lg:pb-24"
@@ -33,7 +40,7 @@
               accept=".pdf,.jpg,.jpeg,.png"
             />
 
-            <label for="fileInput" class="file-label lg:text-xl mx-auto w-2/3">
+            <label for="fileInput" class="file-label mx-auto w-2/3 lg:text-xl">
               <div v-if="isDragging">Release to drop files here.</div>
               <div v-else class="flex flex-col items-center gap-4">
                 <img
@@ -44,7 +51,7 @@
                 <p>You can drag and drop images to upload</p>
 
                 <button
-                  class="relative mt-4 flex items-center gap-1 rounded-md bg-atlas-red pl-2 pr-3 lg:px-6 py-2"
+                  class="relative mt-4 flex items-center gap-1 rounded-md bg-atlas-red py-2 pl-2 pr-3 lg:px-6"
                 >
                   <img src="~/assets/images/plus.svg" alt="add icon" />
                   Upload File
@@ -84,7 +91,6 @@
                       {{ Math.round(file.size / 1000) + "kb" }}
                     </p>
                   </div>
-                  
                 </div>
                 <div class="absolute right-2 top-0">
                   <button
