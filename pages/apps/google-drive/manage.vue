@@ -1,7 +1,7 @@
 <template>
   <div>
-    <div class="mt-4 mb-6 flex gap-[10px]">
-      <nuxt-link to="/apps" class="p-[7px] rounded-[100px] bg-[#1b1f31]">
+    <div class="mb-6 mt-4 flex gap-[10px]">
+      <nuxt-link to="/apps" class="rounded-[100px] bg-[#1b1f31] p-[7px]">
         <img src="~/assets/images/previous.svg" alt="previous icon" />
       </nuxt-link>
     </div>
@@ -11,9 +11,6 @@
       </div>
 
       <div class="m-1 flex flex-col gap-10">
-        <!-- <div class="atlas-playlists">
-          <atlas-spotify-playlist-manager />
-        </div> -->
         <div class="spotify-actions" v-if="isGoogleConnected">
           <google-drive-manager />
         </div>
