@@ -1,6 +1,6 @@
 <template>
   <aside id="logo-sidebar"
-    class="bg-primary fixed left-0 top-0 z-40 h-screen w-64 -translate-x-full pt-24 transition-transform sm:translate-x-0"
+    class="bg-primary fixed left-0 top-0 z-40 h-screen w-64 -translate-x-full pt-24 transition-transform md:translate-x-0"
     aria-label="Sidebar">
     <div class="h-full overflow-y-auto pb-4">
       <p class="px-11 py-3 text-xs text-gray-500">MAIN MENU</p>

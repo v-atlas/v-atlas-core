@@ -1,17 +1,17 @@
 <template>
   <header>
     <nav class="fixed top-0 z-50 w-full bg-primary">
-      <div class="px-3 py-5 sm:px-8">
+      <div class="px-3 py-5 md:px-8">
         <div class="flex items-center justify-between">
           <div
-            class="flex items-center justify-start rtl:justify-end sm:basis-[60%]"
+            class="flex items-center justify-start rtl:justify-end md:basis-[60%]"
           >
             <button
               data-drawer-target="logo-sidebar"
               data-drawer-toggle="logo-sidebar"
               aria-controls="logo-sidebar"
               type="button"
-              class="inline-flex items-center rounded-lg p-2 text-sm text-gray-400 hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-600 sm:hidden"
+              class="inline-flex items-center rounded-lg p-2 text-sm text-gray-400 hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-600 md:hidden"
             >
               <span class="sr-only">Open sidebar</span>
               <svg
@@ -35,12 +35,12 @@
                 alt="VAtlas Logo"
               />
               <span
-                class="self-center whitespace-nowrap text-xl font-semibold text-white sm:text-2xl"
+                class="self-center whitespace-nowrap text-xl font-semibold text-white md:text-2xl"
                 >VAtlas</span
               >
             </a>
             <input
-              class="ml-16 hidden h-10 w-full rounded-[11px] bg-[#1e2334] border border-[#343950] px-[14px] py-[11px] sm:block"
+              class="ml-16 hidden h-10 w-full rounded-[11px] bg-[#1e2334] border border-[#343950] px-[14px] py-[11px] md:block"
               type="text"
               placeholder="Search..."
             />

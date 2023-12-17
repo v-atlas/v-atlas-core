@@ -76,7 +76,7 @@
                     src="~/assets/images/folder.svg"
                     alt="folder"
                   />
-                  <div>
+                  <div class="overflow-hidden">
                     <p class="truncate">
                       {{ file.name }}
                     </p>

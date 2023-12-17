@@ -51,7 +51,7 @@
       <div v-if="playlistVisible">
         <div v-if="playlistAvailable">
           <div
-            class="grid grid-cols-1 gap-10 md:grid-cols-2 md:gap-5 lg:grid-cols-3 2xl:grid-cols-4"
+            class="grid gap-10 sm:grid-cols-2 md:gap-5 lg:grid-cols-3 2xl:grid-cols-4"
           >
             <spotify-playlist-item
               v-for="item of playlistData"

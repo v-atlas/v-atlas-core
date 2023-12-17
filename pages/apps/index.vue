@@ -1,7 +1,7 @@
 <template>
   <h1 class="mb-10 text-xl">Connected Apps</h1>
   <div
-    class="grid gap-x-6 gap-y-8 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4"
+    class="grid gap-x-6 gap-y-8 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4"
   >
     <connected-app-card v-for="app in apps" :app="app" />
   </div>

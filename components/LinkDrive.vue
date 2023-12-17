@@ -8,10 +8,10 @@
         <div class="relative flex flex-row gap-2" v-else>
             <template v-if="data?.success">
                 <button
-                    class="relative flex items-center gap-[17px] overflow-hidden rounded-[10px] bg-primary px-[21px] py-3 transition duration-300 ease-in-out hover:bg-[#1dd35d4d] disabled:hover:bg-primary"
+                    class="relative flex items-center gap-[17px] overflow-hidden rounded-[10px] bg-primary px-[21px] py-3 transition duration-300 ease-in-out hover:bg-[#ff5c3f4c] disabled:hover:bg-primary"
                     @click="handleConnectToGoogleDrive" :class="{ 'pr-12': isGoogleConnected }"
                     :disabled="isGoogleConnected">
-                    <div class="absolute -left-20 -top-20 h-32 w-32 rounded-[64px] bg-[#1DD35E99] blur-[84px]"></div>
+                    <div class="absolute -left-20 -top-20 h-32 w-32 rounded-[64px] bg-[#FF5B3F99] blur-[84px]"></div>
                     <GoogleDriveIcon></GoogleDriveIcon>
                     {{ isGoogleConnected ? "Connected" : "Connect" }}
                     to Google Drive
