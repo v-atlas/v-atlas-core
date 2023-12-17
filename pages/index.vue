@@ -17,7 +17,7 @@
           </div>
         </div>
         <div class="history rounded-[10px] bg-primary px-6 pb-20 pt-6">
-          <h2 class="mb-6 text-xl">Transaction History</h2>
+          <h2 class="mb-6 text-xl">Activity</h2>
           <hr class="mb-[18px] border border-gray-800" />
           <div class="space-y-4">
             <!-- single transaction history item -->
